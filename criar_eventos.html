@@ -110,9 +110,7 @@
         "disciplina" : $("#disciplina").val(),
         "message" : $("#message").val(),
     };
-
     eventos.push(currentEvent);
-
     try {            
         localStorage.eventos = JSON.stringify(eventos); 
         console.log("The data was saved.");
@@ -124,7 +122,6 @@
         alert('Quota exceeded!');
     }
     }
-
     });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
