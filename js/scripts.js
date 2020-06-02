@@ -126,7 +126,7 @@ function setTextoTop(s) {
     var reserva = {
       id: '',
       tipo: '',
-      user: '', //aluno que realiza a reserva
+      user: '',       //aluno que realiza a reserva
       sala: '',
       data: '',
       hora_init: '',
@@ -531,3 +531,5 @@ function setTextoTop(s) {
     }
     return true;
   }
+
+
