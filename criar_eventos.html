@@ -15,6 +15,11 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles2.css" rel="stylesheet" />
+        <!-- Scripts-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+        <script src="../javascript/scripts.js"></script>
     </head>
     <body id="page-top" style="background-color:rgb(31, 31, 31);">
 
@@ -90,69 +95,38 @@
 
     <!--scripts          ids name, email,  disciplina, message; -->
     <script>
+    $("#sendMessageButton").click(function(){
 
-    $(document).ready(function () {
-      $('#mytooltip').attr('data-html', 'true');
-      $('#mytooltip').attr('title', '\"discente\"<br>\"docente\"<br>\"\"');
-      $('#reset_tooltip').attr('data-html', 'true');
-      $('#reset_tooltip').attr('title', 'Clique aqui para eliminar todos os dados.');
-      $('[data-toggle="tooltip"]').tooltip();
+    var eventos;
+    if(!localStorage.eventos) { eventos = []; }
+    else {
+      eventos = JSON.parse(localStorage.eventos);
+    }
 
-      var nome = localStorage.getItem('name');
-      var email = localStorage.getItem('email');
-      var disciplina = localStorage.getItem('disciplina');
-      var message =
-      //console.log(checked_lembrar);
-      if (checked_lembrar === 'true') {
-        $('#name').val(nome);
-        $('#email').val(email);
-        $('#disciplina').val(disciplina);
-        $('#message').val(message);
-        $('#check_lembrar').prop('checked', true);
-      }
-    });
+    // don't stringify the data yet
+    var currentEvent = {
+        "name"  : $("#name").val(),
+        "email" : $("#email").val(), 
+        "disciplina" : $("#disciplina").val(),
+        "message" : $("#message").val(),
+    };
 
-    $("#reset_tooltip").on('click', function(){
-      localStorage.clear();
-      window.alert('Os dados locais foram eliminados!');
-    });
+    eventos.push(currentEvent);
 
-    $('#myForm').on('submit', function (e) {
-      e.preventDefault();
-      var nome = $('#name').val();
-      var e_mail = $('#email').val();
-      var disciplina = $('#disciplina').val();
-      var mensagem = $('#message').val();
+    try {            
+        localStorage.eventos = JSON.stringify(eventos); 
+        console.log("The data was saved.");
+        window.alert("Evento criado com sucesso!");
+        return true;          
+    }
+    catch (e) {
+        if (e == QUOTA_EXCEEDED_ERR) {
+        alert('Quota exceeded!');
+    }
+    }
 
-      var is_checked_lembrar = $('#check_lembrar').is(':checked');
-      //console.log(nome);
-      //console.log(e_mail);
-      //console.log(is_checked_lembrar);
-      if (e_mail != '') {
-        switch (nome) {
-          case 'discente': $('#myForm').attr('action', 'index.html'); break;
-          case 'docente': $('#myForm').attr('action', 'professor.html'); break;
-          default: break;
-        }
-        //console.log($('#myForm').attr('action'));
-        localStorage.setItem('name', nome);
-        localStorage.setItem('e_mail', e_mail);
-        localStorage.setItem('disciplina', disciplina);
-        localStorage.setItem('e_mail', mensagem);
-        //console.log(localStorage.getItem('e_mail'));
-        localStorage.setItem('check_lembrar', is_checked_lembrar);
-        //console.log(localStorage.getItem('check_lembrar'));
-      }
-
-      this.submit();
     });
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    <script src="../javascript/scripts.js"></script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
