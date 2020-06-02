@@ -59,7 +59,7 @@
             else {
               document.getElementById("eventos").innerHTML = "Sorry, your browser does not support Web Storage...";
             }*/
-            getData();
+            /*getData();
             function getData() {
                 const obj = JSON.parse(localStorage.getItem('eventos'));
                 console.log(obj.name);
@@ -72,6 +72,7 @@
 
             localStorage.setItem('eventos', JSON.stringify(data.concat(obj)));
             }
+
             function getData() {
                 return JSON.parse(localStorage.getItem('eventos'));
             }
@@ -84,7 +85,8 @@
                  tbody.appendChild(tr.cloneNode(true));
                 }
                 data.forEach((row, i) => Object.keys(row).forEach(prop => tbody.rows[i+1].querySelector('.' + prop).textContent = row[prop] ));
-            }   
+            }   */
+
         </script>
 
         <!-- Footer-->
