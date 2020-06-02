@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>CodeMent</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles2.css" rel="stylesheet" />
+    </head>
+    <body id="page-top" style="background-color:rgb(31, 31, 31);">
+
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" src="https://codingforspeed.com/wp-content/uploads/2018/11/laptop-coding-editor.jpg"><b>CodeMent</b> </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Eventos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-heading">CodeMent!</div>
+                <div class="masthead-subheading text-uppercase"></div>
+            </div>
+        </header>
+
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Criação de Eventos</h2>
+                    <h2 class>""</h2>
+                </div>
+                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                <div class="row justify-content-center">
+                    <div class="col-sm-7">
+                        <div class="form-group">
+                            <input class="form-control" id="name" type="text" placeholder="Nome do docente  *" required="required" data-validation-required-message="Introduza o seu nome." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" id="email" type="email" placeholder="Email *" required="required" data-validation-required-message="Introduza o seu email." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group ">
+                            <input class="form-control" id="disciplina" type="tel" placeholder="Disciplina *" required="required" data-validation-required-message="Introduza a disciplina." />
+                            <p class="help-block text-danger">
+                        </div>
+                    
+                        <div class="form-group">
+                            <textarea class="form-control" id="message" placeholder="Informações do Evento *" required="required" data-validation-required-message="Introduza Informações do Evento."></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="form-group ">
+                            <div id="success"></div>
+                            <button class="btn btn-dark btn-xl text-uppercase" id="sendMessageButton" type="submit">Criar Evento</button>
+                        </div>
+                    </div>
+                </div>   
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left" style="color: white;">Copyright © CodeMent 2020</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a><a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-right"><a href="#!">Políticas de privacidade </a><a href="#!">Termos de uso</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    <!--scripts          ids name, email,  disciplina, message; -->
+    <script>
+
+    $(document).ready(function () {
+      $('#mytooltip').attr('data-html', 'true');
+      $('#mytooltip').attr('title', '\"discente\"<br>\"docente\"<br>\"\"');
+      $('#reset_tooltip').attr('data-html', 'true');
+      $('#reset_tooltip').attr('title', 'Clique aqui para eliminar todos os dados.');
+      $('[data-toggle="tooltip"]').tooltip();
+
+      var nome = localStorage.getItem('name');
+      var email = localStorage.getItem('email');
+      var disciplina = localStorage.getItem('disciplina');
+      var message =
+      //console.log(checked_lembrar);
+      if (checked_lembrar === 'true') {
+        $('#name').val(nome);
+        $('#email').val(email);
+        $('#disciplina').val(disciplina);
+        $('#message').val(message);
+        $('#check_lembrar').prop('checked', true);
+      }
+    });
+
+    $("#reset_tooltip").on('click', function(){
+      localStorage.clear();
+      window.alert('Os dados locais foram eliminados!');
+    });
+
+    $('#myForm').on('submit', function (e) {
+      e.preventDefault();
+      var nome = $('#name').val();
+      var e_mail = $('#email').val();
+      var disciplina = $('#disciplina').val();
+      var mensagem = $('#message').val();
+
+      var is_checked_lembrar = $('#check_lembrar').is(':checked');
+      //console.log(nome);
+      //console.log(e_mail);
+      //console.log(is_checked_lembrar);
+      if (e_mail != '') {
+        switch (nome) {
+          case 'discente': $('#myForm').attr('action', 'index.html'); break;
+          case 'docente': $('#myForm').attr('action', 'professor.html'); break;
+          default: break;
+        }
+        //console.log($('#myForm').attr('action'));
+        localStorage.setItem('name', nome);
+        localStorage.setItem('e_mail', e_mail);
+        localStorage.setItem('disciplina', disciplina);
+        localStorage.setItem('e_mail', mensagem);
+        //console.log(localStorage.getItem('e_mail'));
+        localStorage.setItem('check_lembrar', is_checked_lembrar);
+        //console.log(localStorage.getItem('check_lembrar'));
+      }
+
+      this.submit();
+    });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="../javascript/scripts.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/mail/jqBootstrapValidation.js"></script>
+    <script src="assets/mail/contact_me.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="dist/dropzone.js"></script>
+    </body>
+
+</html>
