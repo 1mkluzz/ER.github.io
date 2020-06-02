@@ -5,7 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
- 
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <!-- <script src="../js/scripts.js"></script> -->
+
   <title>CodeMent - Login</title>
 </head>
 
@@ -27,7 +32,7 @@
 
   <div class="container-fluid">
     <div class="row" style="justify-content: center">
-      <img class="img-fluid center" src="../assets/images/logouma.png" style="max-height: 150px; min-width: 300px">
+      <img class="img-fluid center" src="/assets/img/uma.png" style="max-height: 150px; min-width: 300px">
     </div>
   </div>
 
@@ -101,7 +106,7 @@
         switch (user) {
           case 'discente': $('#myForm').attr('action', 'index.html'); break;
           case 'docente': $('#myForm').attr('action', 'professor.html'); break;
-          default: break;
+          default: $('#myForm').attr('action', 'login.html'); break;
         }
         //console.log($('#myForm').attr('action'));
         localStorage.setItem('e_mail', e_mail);
@@ -113,10 +118,7 @@
       this.submit();
     });
   </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script src="../javascript/scripts.js"></script>
+
 </body>
 
 </html>
