@@ -12,16 +12,21 @@
   <!-- <script src="../js/scripts.js"></script> -->
 
   <title>CodeMent - Login</title>
+
+
+
 </head>
 
 <body>
 
   <div class="container-fluid" style="background-color: rgb(26, 26, 26)">
     <div class="row align-items-center">
-      <div class="col-md-10">
-        <h4>
-          <a href="login.html" style="color: rgb(89, 134, 219); text-decoration: none">CodeMent</a>
-          <small class="text-white-50" >Sistema de Apoio ao Ensino à Distância</small>
+      <div class = "col-md-2" >
+        <!-- vazio so para centrar o de baixo -->
+      </div>
+      <div class="col-md-8" style="justify-content: center" >
+        <h4 style="text-align: center">
+          <a  style="color: rgb(89, 134, 219); text-decoration: none">Sistema de Apoio ao Ensino à Distância</a>
         </h4>
       </div>
       <div class="col-md-2 text-white-50" style="text-align: right">
@@ -32,9 +37,17 @@
 
   <div class="container-fluid">
     <div class="row" style="justify-content: center">
-      <img class="img-fluid center" src="/assets/img/uma.png" style="max-height: 150px; min-width: 300px">
+      <br><br>
     </div>
   </div>
+
+  <div class="container-fluid">
+    <div class="row" style="justify-content: center">
+      <img class="img-fluid center" src="/assets/img/codement_logo.png" style="max-height: 150px; min-width: 300px">
+    </div>
+    <p></p>
+  </div>
+
 
   <div class="container" style="padding-bottom: 2%">
     <div class="row">
@@ -67,15 +80,19 @@
         </form>
 
       </div>
-      <div class="col-md-4"></div>
-    </div>
+      <div class="container-fluid">
+        <p><br></p>
+        <div class="row" style="justify-content: center">
+          <img class="img-fluid center" src="/assets/img/uma.png" style="max-height: 150px; min-width: 300px">
+        </div>
+      </div>
   </div>
 
   <!--scripts-->
   <script>
     $(document).ready(function () {
       $('#mytooltip').attr('data-html', 'true');
-      $('#mytooltip').attr('title', '\"discente\"<br>\"docente\"<br>\"\"');
+      $('#mytooltip').attr('title', '\"discente\"<br>\"docente\"');
       $('#reset_tooltip').attr('data-html', 'true');
       $('#reset_tooltip').attr('title', 'Clique aqui para eliminar todos os dados.');
       $('[data-toggle="tooltip"]').tooltip();
