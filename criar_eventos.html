@@ -91,6 +91,8 @@
                 </div>
             </div>
         </footer>
+
+
     <!--scripts -->
     <script>
     $("#sendMessageButton").click(function(){
@@ -101,7 +103,6 @@
       eventos = JSON.parse(localStorage.eventos);
     }
 
-    // don't stringify the data yet
     var currentEvent = {
         "name"  : $("#name").val(),
         "email" : $("#email").val(), 
@@ -118,6 +119,7 @@
     catch (e) {
         if (e == QUOTA_EXCEEDED_ERR) {
         alert('Quota exceeded!');
+        window.alert("Sem espaço para criar evento!");
     }
     }
     });
