@@ -5,18 +5,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
- 
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <!-- <script src="../js/scripts.js"></script> -->
+
   <title>CodeMent - Login</title>
+
+
+
 </head>
 
 <body>
 
   <div class="container-fluid" style="background-color: rgb(26, 26, 26)">
     <div class="row align-items-center">
-      <div class="col-md-10">
-        <h4>
-          <a href="login.html" style="color: rgb(89, 134, 219); text-decoration: none">CodeMent</a>
-          <small class="text-white-50" >Sistema de Apoio ao Ensino à Distância</small>
+      <div class = "col-md-2" >
+        <!-- vazio so para centrar o de baixo -->
+      </div>
+      <div class="col-md-8" style="justify-content: center" >
+        <h4 style="text-align: center">
+          <a  style="color: rgb(89, 134, 219); text-decoration: none">Sistema de Apoio ao Ensino à Distância</a>
         </h4>
       </div>
       <div class="col-md-2 text-white-50" style="text-align: right">
@@ -27,15 +37,23 @@
 
   <div class="container-fluid">
     <div class="row" style="justify-content: center">
-      <img class="img-fluid center" src="../assets/images/logouma.png" style="max-height: 150px; min-width: 300px">
+      <br><br>
     </div>
   </div>
+
+  <div class="container-fluid">
+    <div class="row" style="justify-content: center">
+      <img class="img-fluid center" src="/assets/img/codement_logo.png" style="max-height: 150px; min-width: 300px">
+    </div>
+    <p></p>
+  </div>
+
 
   <div class="container" style="padding-bottom: 2%">
     <div class="row">
       <div class="col-md-4"></div>
       <div class="col-md-4" style="background-color: rgb(177, 176, 218); padding-bottom: 10px; border-radius: 10px">
-        <h3 style="text-align: center">CodeMent -<br> Login</h3>
+        <h3 style="text-align: center"> Login</h3>
 
         <form id="myForm">
           <div class="form-group">
@@ -58,19 +76,23 @@
               <a href="#" id="mytooltip" data-toggle="tooltip" data-placement="bottom">Passwords</a>
             </div>
           </div>
-          <button type = 'submit' class="btn btn-dark btn-block">Entrar</button>
+          <button type = 'submit' id = "submit" class="btn btn-dark btn-block">Entrar</button>
         </form>
 
       </div>
-      <div class="col-md-4"></div>
-    </div>
+      <div class="container-fluid">
+        <p><br></p>
+        <div class="row" style="justify-content: center">
+          <img class="img-fluid center" src="/assets/img/uma.png" style="max-height: 150px; min-width: 300px">
+        </div>
+      </div>
   </div>
 
   <!--scripts-->
   <script>
     $(document).ready(function () {
       $('#mytooltip').attr('data-html', 'true');
-      $('#mytooltip').attr('title', '\"discente\"<br>\"docente\"<br>\"\"');
+      $('#mytooltip').attr('title', '\"discente\"<br>\"docente\"');
       $('#reset_tooltip').attr('data-html', 'true');
       $('#reset_tooltip').attr('title', 'Clique aqui para eliminar todos os dados.');
       $('[data-toggle="tooltip"]').tooltip();
@@ -89,34 +111,62 @@
       window.alert('Os dados locais foram eliminados!');
     });
 
-    $('#myForm').on('submit', function (e) {
-      e.preventDefault();
-      var user = $('#pwd').val();
-      var e_mail = $('#mail').val();
-      var is_checked_lembrar = $('#check_lembrar').is(':checked');
-      //console.log(user);
-      //console.log(e_mail);
-      //console.log(is_checked_lembrar);
-      if (e_mail != '') {
-        switch (user) {
-          case 'discente': $('#myForm').attr('action', 'index.html'); break;
-          case 'docente': $('#myForm').attr('action', 'professor.html'); break;
-          default: break;
+
+    $("#submit").click(function(){
+
+      var users;
+        if(!localStorage.users) { users = []; }
+        else {
+            users = JSON.parse(localStorage.users);
         }
-        //console.log($('#myForm').attr('action'));
-        localStorage.setItem('e_mail', e_mail);
-        //console.log(localStorage.getItem('e_mail'));
-        localStorage.setItem('check_lembrar', is_checked_lembrar);
-        //console.log(localStorage.getItem('check_lembrar'));
+
+        // don't stringify the data yet
+        var currentUser = {
+            "email" : $("#mail").val(), 
+            "lembrar" : $("#check_lembrar").val()
+        };
+
+        users.push(currentUser);
+
+        try {            
+            localStorage.users = JSON.stringify(users); 
+            console.log("The data was saved."); 
+            return true;          
+        }
+        catch (e) {
+            if (e == QUOTA_EXCEEDED_ERR) {
+            alert('Quota exceeded!');
+        }
       }
 
-      this.submit();
     });
+
+
+    // $('#myForm').on('submit', function (e) {
+    //   e.preventDefault();
+    //   var user = $('#pwd').val();
+    //   var e_mail = $('#mail').val();
+    //   var is_checked_lembrar = $('#check_lembrar').is(':checked');
+    //   //console.log(user);
+    //   //console.log(e_mail);
+    //   //console.log(is_checked_lembrar);
+    //   if (e_mail != '') {
+    //     switch (user) {
+    //       case 'discente': $('#myForm').attr('action', 'index.html'); break;
+    //       case 'docente': $('#myForm').attr('action', 'professor.html'); break;
+    //       default:  break;
+    //     }
+    //     //console.log($('#myForm').attr('action'));
+    //     localStorage.setItem('e_mail', e_mail);
+    //     //console.log(localStorage.getItem('e_mail'));
+    //     localStorage.setItem('check_lembrar', is_checked_lembrar);
+    //     //console.log(localStorage.getItem('check_lembrar'));
+    //   }
+
+    //   this.submit();
+    // });
   </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script src="../javascript/scripts.js"></script>
+
 </body>
 
 </html>
