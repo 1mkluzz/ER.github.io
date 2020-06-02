@@ -58,19 +58,21 @@
         <form id="myForm">
           <div class="form-group">
             <label for="mail">E-mail:</label>
-            <input type="email" placeholder="Ex: 2030017@student.uma.pt" class="form-control" id="mail">
+            <input type="email" placeholder="Ex: 2030017@student.uma.pt"  class="form-control" id="mail">
+            <!-- falta meter required="required" -->
           </div>
           <div class="form-group">
             <label for="pwd">Password:</label>
             <input type="password" class="form-control" id="pwd">
+            <!-- falta meter required="required" -->
           </div>
           <div class="row">
             <div class="col">
-              <div class="form-group form-check">
+              <!-- <div class="form-group form-check">
                 <label class="form-check-label">
                   <input class="form-check-input" type="checkbox" id="check_lembrar"> Lembrar dados </input>
                 </label>
-              </div>
+              </div> -->
             </div>
             <div class="col" style="text-align: right">
               <a href="#" id="mytooltip" data-toggle="tooltip" data-placement="bottom">Passwords</a>
@@ -95,18 +97,14 @@
       $('#mytooltip').attr('title', '\"discente\"<br>\"docente\"');
       $('#reset_tooltip').attr('data-html', 'true');
       $('#reset_tooltip').attr('title', 'Clique aqui para eliminar todos os dados.');
-      $('[data-toggle="tooltip"]').tooltip();
-
-      var checked_lembrar = localStorage.getItem('check_lembrar');
-      var mail = localStorage.getItem('e_mail');
-      //console.log(checked_lembrar);
-      if (checked_lembrar === 'true') {
-        $('#mail').val(mail);
-        $('#check_lembrar').prop('checked', true);
-      }
+      $('[data-toggle="tooltip"]').tooltip();     
     });
 
     $("#reset_tooltip").on('click', function(){
+      if (confirm("Apagar todos os dados?")) {     
+          } else {
+        return;
+      }
       localStorage.clear();
       window.alert('Os dados locais foram eliminados!');
     });
@@ -119,26 +117,31 @@
         else {
             users = JSON.parse(localStorage.users);
         }
-
+        p = $("#pwd").val();
         // don't stringify the data yet
-        var currentUser = {
-            "email" : $("#mail").val(), 
-            "lembrar" : $("#check_lembrar").val()
+        if ($("#mail").val()!='' &&  $("#pwd").val()){
+              var currentUser = {
+              "email" : $("#mail").val(),
+              "password" :  $("#pwd").val(),
+              "lembrar" : $("#check_lembrar").is(":checked"),
         };
 
-        users.push(currentUser);
 
-        try {            
-            localStorage.users = JSON.stringify(users); 
-            console.log("The data was saved."); 
-            return true;          
-        }
-        catch (e) {
-            if (e == QUOTA_EXCEEDED_ERR) {
-            alert('Quota exceeded!');
+        // if ($("#check_lembrar").is(":checked")) {
+        //       document.getElementById("#mail").value = $("#mail").val();
+        //       document.getElementById("#check_lembrar").value = true;
+        // }
+
+        users.push(currentUser);
+  
+        localStorage.users = JSON.stringify(users); 
+
+        switch (p) {
+          case 'discente': $('#myForm').attr('action', 'index.html'); break;
+          case 'docente': $('#myForm').attr('action', 'professor.html'); break;
+          default:  break;
         }
       }
-
     });
 
 
