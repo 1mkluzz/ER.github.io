@@ -105,7 +105,7 @@
           } else {
         return;
       }
-      localStorage.clear();
+      sessionStorage.clear();
       window.alert('Os dados locais foram eliminados!');
     });
 
@@ -113,9 +113,9 @@
     $("#submit").click(function(){
 
       var users;
-        if(!localStorage.users) { users = []; }
+        if(!sessionStorage.users) { users = []; }
         else {
-            users = JSON.parse(localStorage.users);
+            users = JSON.parse(sessionStorage.users);
         }
         p = $("#pwd").val();
         // don't stringify the data yet
@@ -134,7 +134,7 @@
 
         users.push(currentUser);
   
-        localStorage.users = JSON.stringify(users); 
+        sessionStorage.users = JSON.stringify(users); 
 
         switch (p) {
           case 'discente': $('#myForm').attr('action', 'index.html'); break;
