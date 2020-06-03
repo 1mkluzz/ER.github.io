@@ -25,9 +25,10 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Serviços</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Acerca</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Equipa</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contatos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="speech_text.html">Speech-To-Text</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="logout()">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -37,7 +38,7 @@
             <div class="container">
                 <div class="masthead-heading">Bem-vindo ao CodeMent!</div>
                 <div class="masthead-subheading text-uppercase">Dúvidas em programação? Nós ajudamos</div>
-                <a class="btn btn-light btn-xl text-uppercase js-scroll-trigger" href="#services">Saber mais</a>
+               
             </div>
         </header>
         <!-- Services-->
@@ -48,35 +49,36 @@
                 </div>
                 <div class="row justify-content-around rounded-lg ">
                     <div class="btn-group" >
-                        <button class="btn btn-xl  dropdown-toggle bg-secondary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-xl  dropdown-toggle bg-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                        <!--     <a href="#" id="imageDropdown" data-toggle="dropdown">
                                 <img src="https://shifter.sapo.pt/wp-content/uploads/2020/04/GitHub-Gratuito-Shifter_01.jpg" style="width:80px;height:80px;">
                               </a>-->
                           Grupos
                         </button>
-                        <div class="dropdown-menu dropdown-primary " id="botao">
-                         <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Search"> 
-                           <a class="dropdown-item" href="#">Grupo IHC</a>
-                            <a class="dropdown-item" href="#">Grupo EDA</a>
+                        <div class="dropdown-menu dropdown-primary bg-dark " id="botao">
+                         <input class="form-control " type="text" placeholder="Pesquisar" aria-label="Search"> 
+                            <a class="dropdown-item text-white " href="grupos.html">Grupo EDA</a>
+                            <a class="dropdown-item text-white" href="grupos.html">Grupo ER</a>
+                            <a class="dropdown-item text-white" href="grupos.html">Grupo EO</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Outro</a>
+                            <a class="dropdown-item text-white" href="#">Outro</a>
                         </div>
                     </div>
-
                     <div class="btn-group">
-                        <button class="btn  btn-xl dropdown-toggle bg-secondary " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn  btn-xl dropdown-toggle bg-white " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Eventos
                         </button>
-                        <div class="dropdown-menu" id="botao">
+                        <div class="dropdown-menu bg-dark " id="botao">
                          <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Search"> 
-                             <a class="dropdown-item" href="#">Grupo IHC</a>
-                            <a class="dropdown-item" href="#">Grupo EDA</a>
+                            <a class="dropdown-item text-white " href="grupos.html">Grupo EDA</a>
+                            <a class="dropdown-item text-white" href="grupos.html">Grupo ER</a>
+                            <a class="dropdown-item text-white" href="grupos.html">Grupo EO</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Outro</a>
+                            <a class="dropdown-item text-white" href="#">Outro</a>
                         </div>
                       </div>
                     <div class="btn-group">
-                    <button class="btn btn-secondary btn-rounded btn-xl bg-info" onclick = "window.location.href = '/howtodoit.html'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
+                    <button class="btn btn-secondary btn-rounded btn-xl bg-info" onclick = "window.location.href = '/documentacao.html'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
                         Como utilizar o Sistema CodeMent
                     </button>
 
