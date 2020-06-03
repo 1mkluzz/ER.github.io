@@ -51,19 +51,18 @@
                 <form id="contactForm" name="sentMessage" novalidate="novalidate">
                 <div class="row justify-content-center">
                     <div class="col-sm-7">
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <input class="form-control" id="name" type="text" placeholder="Nome do docente  *" required="required" data-validation-required-message="Introduza o seu nome." />
                             <p class="help-block text-danger"></p>
-                        </div>
+                        </div>-->
                         <div class="form-group">
-                            <input class="form-control" id="email" type="email" placeholder="Email *" required="required" data-validation-required-message="Introduza o seu email." />
-                            <p class="help-block text-danger"></p>
-                        </div>
-                        <div class="form-group ">
                             <input class="form-control" id="disciplina" type="tel" placeholder="Disciplina *" required="required" data-validation-required-message="Introduza a disciplina." />
                             <p class="help-block text-danger">
                         </div>
-                    
+                        <div class="form-group ">
+                            <input class="form-control" id="data" type="data" placeholder="Data Limite *" required="required" data-validation-required-message="Introduza uma data." />
+                            <p class="help-block text-danger"></p>
+                        </div>
                         <div class="form-group">
                             <textarea class="form-control" id="message" placeholder="Informações do Evento *" required="required" data-validation-required-message="Introduza Informações do Evento."></textarea>
                             <p class="help-block text-danger"></p>
@@ -104,9 +103,10 @@
     }
 
     var currentEvent = {
-        "name"  : $("#name").val(),
-        "email" : $("#email").val(), 
+        /*"name"  : $("#name").val(),
+        "email" : $("#email").val(), */
         "disciplina" : $("#disciplina").val(),
+        "data" : $("#data").val(), 
         "message" : $("#message").val(),
     };
     eventos.push(currentEvent);
