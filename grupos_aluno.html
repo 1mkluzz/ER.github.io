@@ -14,8 +14,17 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles_grupos.css" rel="stylesheet" />
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts_grupo.js"></script>
+
     </head>
-    <body id="page-top">
+    <body id="page-top" onload = "load_events()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top"
@@ -72,11 +81,27 @@
                   </div>
                 <div class="flex-shrink-0"><span class="text-primary">publicado em: dia/mês/ano</span></div>
             </div>
+
+            <!-- EVENTOS IHC -->
+            <div class="resume-section-content">
+              <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="flex-grow-1">
+                  <h3 class="mb-0">Eventos</h3>
+                  <p id = "eventos_ihc"></p>
+                  <a class="btn btn-primary" href="#" role="button">Download</a>
+                  <a class="btn btn-primary" href="#" role="button">Upload</a>
+                  <a class="btn btn-primary" href="#" role="button">Email</a>
+                </div>
+          </div>
+
+
             </div>
-          </section>
+          
+             
+
+        </section>
+          
           <hr class="m-0" />
-
-
             <!-- ER-->
             <section class="resume-section" id="ER">
               <div class="resume-section-content">
@@ -127,6 +152,18 @@
                    <div class="flex-shrink-0"><span class="text-primary">publicado em: dia/mês/ano</span></div>
               </div>
 
+              <!-- EVENTOS -->
+            <div class="resume-section-content">
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                  <div class="flex-grow-1">
+                    <h3 class="mb-0">Eventos</h3>
+                    <p id = "eventos_er"></p>
+                    <a class="btn btn-primary" href="#" role="button">Download</a>
+                    <a class="btn btn-primary" href="#" role="button">Upload</a>
+                    <a class="btn btn-primary" href="#" role="button">Email</a>
+                  </div>
+            </div>
+
             </section>
             <hr class="m-0" />
             <!-- Redes-->
@@ -168,12 +205,41 @@
                 </div>
             </section>
         </div>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts_grupo.js"></script>
+        
     </body>
+
+
+
+    <script>
+      function load_events() {
+            var text_er = "";
+            var text_ihc = "";
+            var data = JSON.parse(localStorage.eventos);
+            
+            var eventos = document.getElementById("eventos_er");
+            var eventos_ihc = document.getElementById("eventos_ihc");
+            
+            for (i = 0; i < data.length; i++){
+              if (data[i]["disciplina"] == "ER"){
+                  var disciplina = data[i]["disciplina"];
+                  var datalimite = data[i]["data"];
+                  var message = data[i]["message"];
+                  
+                  text_er += "Disciplina:" + "       " + disciplina +"<br> "+ "Data Limite:" + "      " + datalimite + "<br>" +  message + "<br><br><br>";
+                  eventos.innerHTML += text_er;
+              }
+
+              else if (data[i]["disciplina"] == "IHC"){
+                  var disciplina = data[i]["disciplina"];
+                  var datalimite = data[i]["data"];
+                  var message = data[i]["message"];
+                  
+                  text_ihc += "Disciplina:" + "       " + disciplina +"<br> "+ "Data Limite:" + "      " + datalimite + "<br>" +  message + "<br><br><br>";
+                  eventos_ihc.innerHTML += text_ihc;
+              }
+            }
+          }
+
+    </script>
+
 </html>
