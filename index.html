@@ -15,8 +15,17 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </head>
-    <body id="page-top" style="background-color:rgb(31, 31, 31);">
+    <body id="page-top" style="background-color:rgb(31, 31, 31);" onload = "onLoad()">
 
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="mainNav">
@@ -29,6 +38,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Equipa</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contatos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="speech_text.html">Speech-To-Text</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="logout()">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,7 +48,7 @@
             <div class="container">
                 <div class="masthead-heading">Bem-vindo ao CodeMent!</div>
                 <div class="masthead-subheading text-uppercase">Dúvidas em programação? Nós ajudamos</div>
-                <a class="btn btn-light btn-xl text-uppercase js-scroll-trigger" href="#services">Saber mais</a>
+                <!--<a class="btn btn-light btn-xl text-uppercase js-scroll-trigger" href="#services">Saber mais</a>-->
             </div>
         </header>
         <!-- Services-->
@@ -50,15 +60,15 @@
                 <div class="row justify-content-around rounded-lg ">
                     <div class="btn-group" >
                         <button class="btn btn-xl  dropdown-toggle bg-secondary" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       <!--     <a href="#" id="imageDropdown" data-toggle="dropdown">
+                       <!-- <a href="#" id="imageDropdown" data-toggle="dropdown">
                                 <img src="https://shifter.sapo.pt/wp-content/uploads/2020/04/GitHub-Gratuito-Shifter_01.jpg" style="width:80px;height:80px;">
                               </a>-->
                           Grupos
                         </button>
                         <div class="dropdown-menu dropdown-primary " id="botao">
                          <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Search"> 
-                           <a class="dropdown-item" href="#">Grupo IHC</a>
-                            <a class="dropdown-item" href="#">Grupo EDA</a>
+                           <a class="dropdown-item" href = "#">Grupo IHC</a>
+                            <a class="dropdown-item" href="grupos.html">Grupo EDA</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Outro</a>
                         </div>
@@ -69,8 +79,8 @@
                           Eventos
                         </button>
                         <div class="dropdown-menu" id="botao">
-                         <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Search">
-                             <a class="dropdown-item" href="criar_eventos.html">Criar Eventos</a>
+                         <input  class="form-control" type="text" placeholder="Pesquisar" aria-label="Search">
+                             <a id="eventos" class="dropdown-item" href="criar_eventos.html" >Criar Eventos</a>
                             <a class="dropdown-item" href="ver_eventos.html">Visualizar Eventos</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Outro</a>
@@ -146,7 +156,7 @@
             </div>
         </section>
         <!-- Team-->
-        <section class="page-section bg-light" id="team">
+        <section class="page-section bg-light" id="team"   >
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Nossa Equipa</h2>
@@ -230,7 +240,7 @@
                         <button class="btn btn-dark btn-xl text-uppercase" id="sendMessageButton" type="submit">Enviar mensagem</button>
                     </div>
                 </form>
-            </div>
+            </div  >
 
         </section>
         <!-- Footer-->
@@ -249,16 +259,30 @@
             
         </footer>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Contact form JS-->
-        <script src="assets/mail/jqBootstrapValidation.js"></script>
-        <script src="assets/mail/contact_me.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+        
     </body>
+
+    <script>
+    function onLoad() {
+        if (sessionStorage.length == 1){
+            window.location.href = "login.html";
+            return;
+        }
+        var data = JSON.parse(sessionStorage.users);        
+        var pwd = data[0]["password"]
+        //console.log(pwd);
+        if ( document.getElementById("eventos").style.display != "none" && pwd == "discente"){
+            document.getElementById("eventos").style.display = "none";  
+        }       
+    }
+
+    function logout(){
+        sessionStorage.clear();
+        window.location.href = "login.html";
+    }
+         
+
+    </script>
 
 
 </html>
