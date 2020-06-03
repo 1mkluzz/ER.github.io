@@ -25,6 +25,7 @@
 
     <body id="page-top" onload="onLoad()" style="background-color:rgb(31, 31, 31);">
 
+
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -39,6 +40,7 @@
                 </div>
             </div>
         </nav>
+
 
         <!-- Masthead-->
         <header class="masthead">
@@ -64,8 +66,7 @@
                 
               </div>
             </section>
-        <!--<div id="eventos"></div>-->
-
+        
         <!--scripts -->
         <script>      
             function onLoad() {
@@ -79,7 +80,7 @@
                     var datalimite = data[i]["data"];
                     var message = data[i]["message"];
                 
-                text += "Disciplina:" + "         " + disciplina +"<br> "+ "Data Limite:" + "         " + datalimite + "<br>" +  "Informação:" + "           " + message + "<br><br><br>";
+                text += "Disciplina:" + "       " + disciplina +"<br> "+ "Data Limite:" + "      " + datalimite + "<br>" +  "Informação:" + "        " + message + "<br><br><br>";
             }
             eventos.innerHTML += text;
             }
