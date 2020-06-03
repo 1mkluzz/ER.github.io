@@ -15,8 +15,17 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="assets/mail/jqBootstrapValidation.js"></script>
+        <script src="assets/mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
     </head>
-    <body id="page-top" style="background-color:rgb(31, 31, 31);">
+    <body id="page-top" style="background-color:rgb(31, 31, 31);" onload = "onLoad()">
 
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="mainNav">
@@ -29,6 +38,7 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Equipa</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contatos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="speech_text.html">Speech-To-Text</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" onclick="logout()">Logout</a></li>
                     </ul>
                 </div>
             </div>
@@ -57,7 +67,7 @@
                         </button>
                         <div class="dropdown-menu dropdown-primary " id="botao">
                          <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Search"> 
-                           <a class="dropdown-item" href="#">Grupo IHC</a>
+                           <a class="dropdown-item" href = "#">Grupo IHC</a>
                             <a class="dropdown-item" href="grupos.html">Grupo EDA</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Outro</a>
@@ -69,8 +79,8 @@
                           Eventos
                         </button>
                         <div class="dropdown-menu" id="botao">
-                         <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Search">
-                             <a class="dropdown-item" href="criar_eventos.html">Criar Eventos</a>
+                         <input  class="form-control" type="text" placeholder="Pesquisar" aria-label="Search">
+                             <a id="eventos" class="dropdown-item" href="criar_eventos.html" >Criar Eventos</a>
                             <a class="dropdown-item" href="ver_eventos.html">Visualizar Eventos</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Outro</a>
@@ -249,6 +259,7 @@
             </div>
             
         </footer>
+<<<<<<< HEAD
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
         <!-- Third party plugin JS-->
@@ -259,4 +270,33 @@
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
+=======
+
+        
+    </body>
+
+    <script>
+    function onLoad() {
+        if (sessionStorage.length == 1){
+            window.location.href = "login.html";
+            return;
+        }
+        var data = JSON.parse(sessionStorage.users);        
+        var pwd = data[0]["password"]
+        //console.log(pwd);
+        if ( document.getElementById("eventos").style.display != "none" && pwd == "discente"){
+            document.getElementById("eventos").style.display = "none";  
+        }       
+    }
+
+    function logout(){
+        sessionStorage.clear();
+        window.location.href = "login.html";
+    }
+         
+
+    </script>
+
+
+>>>>>>> 250f40e2e5fb1b29b7a19798f018866f8f832910
 </html>
