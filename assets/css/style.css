@@ -243,7 +243,7 @@ h1 {
     font-size: 36px;
 }
 strong {
-    color: #ffa000;
+    color: #28a745;
 }
 
 
@@ -267,7 +267,7 @@ ul.tick-ul li:before {
     padding-right: 10px;
     font-family: fontAwesome;
     left: 0;
-    color: #ffa000;
+    color: #28a745;
 }
 
 
