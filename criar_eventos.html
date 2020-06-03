@@ -56,10 +56,23 @@
                             <input class="form-control" id="name" type="text" placeholder="Nome do docente  *" required="required" data-validation-required-message="Introduza o seu nome." />
                             <p class="help-block text-danger"></p>
                         </div>-->
-                        <div class="form-group">
-                            <input class="form-control" id="disciplina" type="text" placeholder="Disciplina *" required="required" data-validation-required-message="Introduza a disciplina." />
+                        <!-- <div class="form-group">
+                            <input class="form-control" id="disciplina" type="radio" value = "ER" required="required" data-validation-required-message="Introduza a disciplina." />
                             <p class="help-block text-danger">
+                        </div> -->
+                        <div>
+                            <select  id="disciplina">
+                                <option value="ER">Engenharia de Requisitos</option>
+                                <option value="IHC">Interacção Humano-Computador</option>
+                            </select>
                         </div>
+                        <div><p><br></p></div>
+
+                        <div class="form-group ">
+                            <input class="form-control" id="nome" type="message" placeholder="Nome evento *" required="required" data-validation-required-message="Introduza um nome." />
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        
                         <div class="form-group ">
                             <input class="form-control" id="data" type="date" placeholder="Data Limite *" required="required" data-validation-required-message="Introduza uma data." />
                             <p class="help-block text-danger"></p>
@@ -104,9 +117,10 @@
       eventos = JSON.parse(localStorage.eventos);
     }
 
-    if($("#disciplina").val()!= "" && $("#data").val()!= "" && $("#message").val()!="" ){
+    if($("#disciplina").val()!= "" && $("#data").val()!= "" && $("#message").val()!="" && $("#nome").val() ){
         var currentEvent = {
         "disciplina" : $("#disciplina").val(),
+        "nome" : $("#nome").val(),
         "data" : $("#data").val(), 
         "message" : $("#message").val(),
     };

@@ -86,11 +86,8 @@
             <div class="resume-section-content">
               <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
-                  <h3 class="mb-0">Eventos</h3>
+                  <!-- <h3 class="mb-0">Eventos</h3> -->
                   <p id = "eventos_ihc"></p>
-                  <a class="btn btn-primary" href="#" role="button">Download</a>
-                  <a class="btn btn-primary" href="#" role="button">Upload</a>
-                  <a class="btn btn-primary" href="#" role="button">Email</a>
                 </div>
           </div>
 
@@ -156,11 +153,8 @@
             <div class="resume-section-content">
                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                   <div class="flex-grow-1">
-                    <h3 class="mb-0">Eventos</h3>
+                    <!-- <h3 class="mb-0">Eventos</h3> -->
                     <p id = "eventos_er"></p>
-                    <a class="btn btn-primary" href="#" role="button">Download</a>
-                    <a class="btn btn-primary" href="#" role="button">Upload</a>
-                    <a class="btn btn-primary" href="#" role="button">Email</a>
                   </div>
             </div>
 
@@ -218,26 +212,33 @@
             
             var eventos = document.getElementById("eventos_er");
             var eventos_ihc = document.getElementById("eventos_ihc");
+
+            // eventos.innerHTML = "";
+            // eventos_ihc.innerHTML = "";
             
             for (i = 0; i < data.length; i++){
               if (data[i]["disciplina"] == "ER"){
                   var disciplina = data[i]["disciplina"];
+                  var nome = data[i]["nome"];
                   var datalimite = data[i]["data"];
                   var message = data[i]["message"];
                   
-                  text_er += "Disciplina:" + "       " + disciplina +"<br> "+ "Data Limite:" + "      " + datalimite + "<br>" +  message + "<br><br><br>";
-                  eventos.innerHTML += text_er;
+                  text_er += "<h3 class='mb-0'>" + nome + "</h3><br><div class='subheading mb-3'>Data Limite: "+ datalimite + "</div>" +  message + "<br><br><a class='btn btn-primary' href='#' role='button'>Download </a>&nbsp<a class='btn btn-primary' href='#' role='button'>Upload</a> <a class='btn btn-primary' href='#' role='button'>Email</a><div class='flex-shrink-0'><span class='text-primary'>publicado em: dia/mês/ano</span></div><br><br><br>";
+                  
               }
 
               else if (data[i]["disciplina"] == "IHC"){
                   var disciplina = data[i]["disciplina"];
+                  var nome = data[i]["nome"];
                   var datalimite = data[i]["data"];
                   var message = data[i]["message"];
                   
-                  text_ihc += "Disciplina:" + "       " + disciplina +"<br> "+ "Data Limite:" + "      " + datalimite + "<br>" +  message + "<br><br><br>";
-                  eventos_ihc.innerHTML += text_ihc;
+                  text_ihc += "<h3 class='mb-0'>" + nome + "</h3><br><div class='subheading mb-3'>Data Limite: "+ datalimite + "</div>" +  message + "<br><br><a class='btn btn-primary' href='#' role='button'>Download </a>&nbsp<a class='btn btn-primary' href='#' role='button'>Upload</a> <a class='btn btn-primary' href='#' role='button'>Email</a><div class='flex-shrink-0'><span class='text-primary'>publicado em: dia/mês/ano</span></div><br><br><br>";
+                  
               }
             }
+            eventos.innerHTML += text_er;
+            eventos_ihc.innerHTML += text_ihc;
           }
 
     </script>
