@@ -138,8 +138,8 @@
 
         switch (p) {
           case 'discente': $('#myForm').attr('action', 'index.html'); break;
-          case 'docente': $('#myForm').attr('action', 'professor.html'); break;
-          default:  break;
+          case 'docente': $('#myForm').attr('action', 'index.html'); break;
+          default:  $('#myForm').attr('action', 'index.html');break;
         }
       }
     });
