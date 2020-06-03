@@ -19,10 +19,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-        <script src="../javascript/scripts.js"></script>
+        <script src="../js/scripts.js">
+        </script>
     </head>
 
-    <body id="page-top" style="background-color:rgb(31, 31, 31);">
+    <body id="page-top" onload="onLoad()" style="background-color:rgb(31, 31, 31);">
 
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" id="mainNav">
@@ -30,7 +31,10 @@
                 <a class="navbar-brand js-scroll-trigger" src="https://codingforspeed.com/wp-content/uploads/2018/11/laptop-coding-editor.jpg"><b>CodeMent</b> </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="criar_eventos.html">Criar Eventos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Ver Eventos</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="index.html">Home</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -44,49 +48,40 @@
                 <!--<a class="btn btn-light btn-xl text-uppercase js-scroll-trigger" href="#services">Saber mais</a>-->
             </div> 
         </header>
+
+        <section>
+            <div class="container-fluid" >
+                <div class="row" style="justify-content: center">
+                    <div class="text-center">
+                        <h2 class="section-heading text-uppercase" style="color: white;">Eventos</h2>
+                        <p> </p>
+                        <p id="eventos" style="color: white;" > </p>
+                    </div>
+                    
+                </div>
+                
+                
+              </div>
+            </section>
         <!--<div id="eventos"></div>-->
 
         <!--scripts -->
-        <script>
+        <script>      
+            function onLoad() {
+            var text = "";
+            var data = JSON.parse(localStorage.eventos);
+            
+            var eventos = document.getElementById("eventos");
+                for (i = 0; i < data.length; i++){
 
-            // Check browser support
-            /*if (typeof(Storage) !== "eventos") {
-              // Store
-              localStorage.setItem("name","email");
-              // Retrieve
-              document.getElementById("eventos").innerHTML = localStorage.getItem("name");
-            } 
-            else {
-              document.getElementById("eventos").innerHTML = "Sorry, your browser does not support Web Storage...";
-            }*/
-            /*getData();
-            function getData() {
-                const obj = JSON.parse(localStorage.getItem('eventos'));
-                console.log(obj.name);
+                    var disciplina = data[i]["disciplina"];
+                    var datalimite = data[i]["data"];
+                    var message = data[i]["message"];
+                
+                text += disciplina +" "+   datalimite +" "+  message + "<br>" ;
             }
-
-            function callme() {
-
-            const data = getData();
-            const obj = Object.assign(["name", "email", "disciplina", "message"].map(prop => ({ [prop]: document.getElementById(prop).value })));
-
-            localStorage.setItem('eventos', JSON.stringify(data.concat(obj)));
+            eventos.innerHTML += text;
             }
-
-            function getData() {
-                return JSON.parse(localStorage.getItem('eventos'));
-            }
-
-            window.onload = function() {
-                const tr = document.querySelector('#result-table tr:last-child');
-                const tbody = tr.parentNode;
-                const data = getData();
-                for (let i = 1; i < data.length; i++) {
-                 tbody.appendChild(tr.cloneNode(true));
-                }
-                data.forEach((row, i) => Object.keys(row).forEach(prop => tbody.rows[i+1].querySelector('.' + prop).textContent = row[prop] ));
-            }   */
-
         </script>
 
         <!-- Footer-->
@@ -114,6 +109,6 @@
         <script src="assets/mail/contact_me.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-        <script src="dist/dropzone.js"></script>
+        <!--<script src="dist/dropzone.js"></script>-->
     </body>
 </html>
