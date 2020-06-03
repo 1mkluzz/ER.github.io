@@ -175,53 +175,52 @@
                           <br><br><a class="btn btn-primary" href="#" role="button">Download</a>
                           <a class="btn btn-primary" href="#" role="button">Upload</a>
                           <a class="btn btn-primary" href="#" role="button">Email</a>
+                          
                            <!-- Button trigger modal -->
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                             Gravar
                           </button>
-
                           <!-- Modal -->
                           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
                                   <h5 class="modal-title" id="exampleModalLongTitle">
-                                  <div>
                                   <div id='gUMArea'>
-                                        Deseja gravar:
-                                        <br>
-                                          <input type="radio" name="media" value="video" checked id='mediaVideo'> Webcam e áudio
-                                          <input type="radio" name="media" value="audio">Áudio
-                                      </div>
-                                      </h5>
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
+                                    <div>
+                                      Deseja gravar: </h5>
+                                      <br>
+                                        <input type="radio" name="media" value="video" checked id='mediaVideo'> Webcam e áudio
+                                        <input type="radio" name="media" value="audio">Áudio
                                     </div>
                                     <div class="modal-footer">
-                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                       <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter2" id='gUMbtn'>Gravar</button>
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                                     </div>
-                                  
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
+                          
 
                           <!-- Modal -->
                           <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLongTitle">Grave o seu aúdio</h5>
+                                  <h5 class="modal-title" id="exampleModalLongTitle">Grave o seu aúdio </h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
-                                </div>              
+                                </div> 
+                                <br>
+                                <p> Cliquem em <strong> começar </strong> para gravar e em <strong> finalizar </strong> quando acabar a gravação </p>             
                                 <div class="modal-footer">
                                  <div id='btns'>
-                                    <button class="btn btn-primary" id='start'>Começar </button>
-                                    <button  class="btn btn-primary" id='stop'>Finalizar</button>
+                                    <button class="btn btn-primary" id='start'>Começar </button>&nbsp;&nbsp;
+                                    <button  class="btn btn-danger" id='stop'>Finalizar</button>
                                   </div>
+
                                 </div>
                                 <div class="modal-body">
                                    <div>
