@@ -96,22 +96,22 @@
       $('#mytooltip').attr('data-html', 'true');
       $('#mytooltip').attr('title', '\"discente\"<br>\"docente\"');
       $('#reset_tooltip').attr('data-html', 'true');
-      $('#reset_tooltip').attr('title', 'Clique aqui para eliminar todos os dados.');
+      $('#reset_tooltip').attr('title', 'Clique aqui para eliminar os dados de sessão.');
       $('[data-toggle="tooltip"]').tooltip();     
     });
 
     $("#reset_tooltip").on('click', function(){
-      if (confirm("Apagar todos os dados?")) {     
+      if (confirm("Apagar todos os dados de sessão?")) {     
           } else {
         return;
       }
       sessionStorage.clear();
-      window.alert('Os dados locais foram eliminados!');
+      window.alert('Os dados de sessão foram eliminados!');
     });
 
 
     $("#submit").click(function(){
-
+      sessionStorage.clear();
       var users;
         if(!sessionStorage.users) { users = []; }
         else {
@@ -119,11 +119,10 @@
         }
         p = $("#pwd").val();
         // don't stringify the data yet
-        if ($("#mail").val()!='' &&  $("#pwd").val()){
+        if ($("#mail").val()!="" &&  $("#pwd").val()!=""){
               var currentUser = {
               "email" : $("#mail").val(),
               "password" :  $("#pwd").val(),
-              "lembrar" : $("#check_lembrar").is(":checked"),
         };
 
 
@@ -138,36 +137,12 @@
 
         switch (p) {
           case 'discente': $('#myForm').attr('action', 'index.html'); break;
-          case 'docente': $('#myForm').attr('action', 'professor.html'); break;
-          default:  break;
+          case 'docente': $('#myForm').attr('action', 'index.html'); break;
+          default:  $('#myForm').attr('action', 'index.html');break;
         }
       }
     });
 
-
-    // $('#myForm').on('submit', function (e) {
-    //   e.preventDefault();
-    //   var user = $('#pwd').val();
-    //   var e_mail = $('#mail').val();
-    //   var is_checked_lembrar = $('#check_lembrar').is(':checked');
-    //   //console.log(user);
-    //   //console.log(e_mail);
-    //   //console.log(is_checked_lembrar);
-    //   if (e_mail != '') {
-    //     switch (user) {
-    //       case 'discente': $('#myForm').attr('action', 'index.html'); break;
-    //       case 'docente': $('#myForm').attr('action', 'professor.html'); break;
-    //       default:  break;
-    //     }
-    //     //console.log($('#myForm').attr('action'));
-    //     localStorage.setItem('e_mail', e_mail);
-    //     //console.log(localStorage.getItem('e_mail'));
-    //     localStorage.setItem('check_lembrar', is_checked_lembrar);
-    //     //console.log(localStorage.getItem('check_lembrar'));
-    //   }
-
-    //   this.submit();
-    // });
   </script>
 
 </body>
