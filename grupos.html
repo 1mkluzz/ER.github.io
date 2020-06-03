@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles_grupos.css" rel="stylesheet" />
+        
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -33,6 +34,7 @@
             </div>
         </nav>
         <!-- Page Content-->
+        
         <div class="container-fluid p-0">
             <!-- About-->
             <section class="resume-section" id="about">
@@ -141,7 +143,7 @@
             </section>
             <hr class="m-0" />
 
-
+           
             <!-- ER-->
             <section class="resume-section" id="ER">
 
@@ -237,6 +239,8 @@
                         </div>
                       </div>
                     </div>
+                    <div id='gUMArea'>
+                <div>
                     <div class="card">
                       <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
@@ -664,7 +668,10 @@
                     </ul>
                 </div>
             </section>
-        </div>
+        </div>  
+        
+
+      <!--ACABA AQUI BOLHA!!!!-->
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
@@ -672,5 +679,62 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts_grupo.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="js/recorder.js"></script>
+        <script>
+          window.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("start");
+            const button_fechar = document.getElementById("stop");
+            const result = document.getElementById("result");
+            const main = document.getElementsByTagName("main")[0];
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+            if (typeof SpeechRecognition === "undefined") {
+                button.remove();
+                const message = document.getElementById("message");
+                message.removeAttribute("hidden");
+                message.setAttribute("aria-hidden", "false");
+            } else {
+                let listening = false;
+                const recognition = new SpeechRecognition();
+                const start = () => {
+                    recognition.start();
+                    button.textContent = "Começar";
+                    main.classList.add("speaking");
+                };
+                const stop = () => {
+                    recognition.stop();
+                  // button.textContent = "Começar";
+                    main.classList.remove("speaking");
+                };
+                const onResult = event => {
+                    result.innerHTML = "";
+                    for (const res of event.results) {
+                        const text = document.createTextNode(res[0].transcript);
+                        const p = document.createElement("p");
+                        if (res.isFinal) {
+                        p.classList.add("final");
+                        }
+                        p.appendChild(text);
+                        result.appendChild(p);
+                    }
+                }
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                recognition.addEventListener("result", onResult);
+
+              /* button.addEventListener("click", () => {
+                listening ? stop() : start();
+                listening = !listening;
+                });*/
+                button.addEventListener("click", () => {
+                    start();
+                });
+                button_fechar.addEventListener("click", () => {
+                    stop();
+                });
+            }
+        });
+        </script>
     </body>
 </html>
