@@ -2,7 +2,7 @@
     box-sizing: border-box;
   }
   html,
-  body {
+  /*body {
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -22,7 +22,7 @@
   header {
     border-bottom: 1px solid #0d122b;
     margin-bottom: 2em;
-  }
+  }*/
   main {
     flex-grow: 2;
     justify-content: space-around;
@@ -88,3 +88,4 @@
     border-top: 1px solid #0d122b;
     text-align: center;
   }
+
