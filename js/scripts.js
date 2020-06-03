@@ -54,7 +54,7 @@
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 
-    $('#botao').mdbDropSearch();
+    $('#botao2').mdbDropSearch();
 
 })(jQuery); // End of use strict
 
