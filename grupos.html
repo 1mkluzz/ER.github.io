@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles_grupos.css" rel="stylesheet" />
-
+        
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -185,25 +185,63 @@
                             <div class="modal-dialog modal-dialog-centered" role="document">
                               <div class="modal-content">
                                 <div class="modal-header">
-                                  <h5 class="modal-title" id="exampleModalLongTitle">Começar a gravação</h5>
+                                  <h5 class="modal-title" id="exampleModalLongTitle">
+                                  <div>
+                                  <div id='gUMArea'>
+                                        Deseja gravar:
+                                        <br>
+                                          <input type="radio" name="media" value="video" checked id='mediaVideo'> Webcam e áudio
+                                          <input type="radio" name="media" value="audio">Áudio
+                                      </div>
+                                      </h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                      <button class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#exampleModalCenter2" id='gUMbtn'>Gravar</button>
+                                    </div>
+                                  
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLongTitle">Grave o seu aúdio</h5>
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                   </button>
+                                </div>              
+                                <div class="modal-footer">
+                                 <div id='btns'>
+                                    <button class="btn btn-primary" id='start'>Começar </button>
+                                    <button  class="btn btn-primary" id='stop'>Finalizar</button>
+                                  </div>
                                 </div>
                                 <div class="modal-body">
-                                  ...
+                                   <div>
+                                    <ul  class="list-unstyled" id='ul'></ul>
+                                  </div>
                                 </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                  <button type="button" class="btn btn-primary">Gravar voz</button>
-                                  <button type="button" class="btn btn-primary">Gravar webcame</button>
-                                </div>
+                                <main>
+                                  <div id="result"></div>
+                                  <p id="message" hidden aria-hidden="true">
+                                      Your browser doesn't support Speech Recognition. Sorry.
+                                  </p>
+                              </main>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <div id='gUMArea'>
+                <div>
                     <div class="card">
                       <div class="card-header" id="headingTwo">
                         <h5 class="mb-0">
@@ -642,5 +680,62 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts_grupo.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script src="js/recorder.js"></script>
+        <script>
+          window.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("start");
+            const button_fechar = document.getElementById("stop");
+            const result = document.getElementById("result");
+            const main = document.getElementsByTagName("main")[0];
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+            if (typeof SpeechRecognition === "undefined") {
+                button.remove();
+                const message = document.getElementById("message");
+                message.removeAttribute("hidden");
+                message.setAttribute("aria-hidden", "false");
+            } else {
+                let listening = false;
+                const recognition = new SpeechRecognition();
+                const start = () => {
+                    recognition.start();
+                    button.textContent = "Começar";
+                    main.classList.add("speaking");
+                };
+                const stop = () => {
+                    recognition.stop();
+                  // button.textContent = "Começar";
+                    main.classList.remove("speaking");
+                };
+                const onResult = event => {
+                    result.innerHTML = "";
+                    for (const res of event.results) {
+                        const text = document.createTextNode(res[0].transcript);
+                        const p = document.createElement("p");
+                        if (res.isFinal) {
+                        p.classList.add("final");
+                        }
+                        p.appendChild(text);
+                        result.appendChild(p);
+                    }
+                }
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                recognition.addEventListener("result", onResult);
+
+              /* button.addEventListener("click", () => {
+                listening ? stop() : start();
+                listening = !listening;
+                });*/
+                button.addEventListener("click", () => {
+                    start();
+                });
+                button_fechar.addEventListener("click", () => {
+                    stop();
+                });
+            }
+        });
+        </script>
     </body>
 </html>
