@@ -161,7 +161,7 @@ hr {
     color: #222;
 }
 .sidebar-boxed .sidenav>li:first-child {
-    /*border-top: 70px solid #26476c;*/
+    border-top: 1px solid #343a40;
 }
 .sidebar-boxed.sidebar-dark .sidenav a.open, 
 .sidebar-boxed.sidebar-dark .sidenav a.open+ul, 
