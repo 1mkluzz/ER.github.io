@@ -264,7 +264,10 @@
 
     <script>
         function onLoad() {
-            if (sessionStorage.length == 1){
+            if (sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer") != null) {
+                sessionStorage.removeItem("IsThisFirstTime_Log_From_LiveServer");
+            }
+            if (sessionStorage.length == 0){
                 window.location.href = "login.html";
                 return;
             }

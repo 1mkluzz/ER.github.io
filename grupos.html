@@ -19,7 +19,7 @@
         
     </head>
     
-    <body id="page-top">
+    <body id="page-top" onload = "onLoad()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
             <a class="navbar-brand js-scroll-trigger" href="#page-top"
@@ -687,6 +687,16 @@
         <script src="js/recorder.js"></script>
 
         <script>
+            function onLoad(){
+              if (sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer") != null) {
+                sessionStorage.removeItem("IsThisFirstTime_Log_From_LiveServer");
+              }
+              if (sessionStorage.length == 0){
+              window.location.href = "login.html";
+              return;
+              }
+            }
+
             window.addEventListener("DOMContentLoaded", () => {
             const button = document.getElementById("start");
             const button_fechar = document.getElementById("stop");
