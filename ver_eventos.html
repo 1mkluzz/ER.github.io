@@ -101,27 +101,27 @@
                     return;
                 }
 
-            var data = JSON.parse(sessionStorage.users);        
-            var pwd = data[0]["password"]
-            //console.log(pwd);
-            if ( document.getElementById("criar").style.display != "none" && pwd == "discente"){
-                document.getElementById("criar").style.display = "none";  
-            }   
+                var data = JSON.parse(sessionStorage.users);        
+                var pwd = data[0]["password"]
+                //console.log(pwd);
+                if ( document.getElementById("criar").style.display != "none" && pwd == "discente"){
+                    document.getElementById("criar").style.display = "none";  
+                }   
 
-            var text = "";
-            var data = JSON.parse(localStorage.eventos);
-            
-            var eventos = document.getElementById("eventos");
-                for (i = 0; i < data.length; i++){
-
-                    var disciplina = data[i]["disciplina"];
-                    var datalimite = data[i]["data"];
-                    var message = data[i]["message"];
+                var text = "";
+                var data = JSON.parse(localStorage.eventos);
                 
-                text += "Disciplina:" + "       " + disciplina +"<br> "+ "Data Limite:" + "      " + datalimite + "<br>" +  "Informação:" + "        " + message + "<br><br><br>";
-            }
-            eventos.innerHTML += text;
-            }
+                var eventos = document.getElementById("eventos");
+                    for (i = 0; i < data.length; i++){
+
+                        var disciplina = data[i]["disciplina"];
+                        var datalimite = data[i]["data"];
+                        var message = data[i]["message"];
+                    
+                    text += "Disciplina:" + "       " + disciplina +"<br> "+ "Data Limite:" + "      " + datalimite + "<br>" +  "Informação:" + "        " + message + "<br><br><br>";
+                }
+                eventos.innerHTML += text;
+                }
         </script>
 
     </body>
