@@ -56,8 +56,8 @@
                         </button>
                         <div class="dropdown-menu dropdown-primary " id="botao">
                          <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Search"> 
-                           <a class="dropdown-item" href = "#">Grupo IHC</a>
-                            <a class="dropdown-item" href="grupos.html">Grupo EDA</a>
+                           <a class="dropdown-item" id ="href_ihc" href = "grupos.html#EDA">Grupo EDA</a>
+                            <a class="dropdown-item" id ="href_er" href="grupos.html#ER">Grupo ER</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Outro</a>
                         </div>
@@ -276,6 +276,11 @@
             //console.log(pwd);
             if ( document.getElementById("eventos").style.display != "none" && pwd == "discente"){
                 document.getElementById("eventos").style.display = "none";  
+            }
+            if (pwd == "discente"){
+                document.getElementById("href_ihc").href="grupos_aluno.html#IHC";
+                document.getElementById("href_ihc").innerHTML="Grupo IHC";
+                document.getElementById("href_er").href="grupos_aluno.html#ER";  
             }       
         }
 
