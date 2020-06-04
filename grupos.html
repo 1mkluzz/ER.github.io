@@ -60,6 +60,48 @@
                 </div>
 
                 <div id="accordion">
+                  <div class="card">
+                    <div class="card-header" id="headingOne">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#criar_grupo_form" aria-expanded="true" aria-controls="collapseOne">
+                          <strong> Criar Grupo</strong>
+                        </button>
+                      </h5>
+                    </div>
+                    <div id="criar_grupo_form" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                      <div class="card-body">
+                        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                          <div class="row justify-content-center">
+                              <div class="col-sm-7">
+                                <div class="form-group ">
+                                  <input class="form-control" id="nome_grupo_form" type="message" placeholder="Nome grupo *" required="required" data-validation-required-message="Introduza um nome." />
+                                  <p class="help-block text-danger"></p>
+                                </div>
+          
+                                <div class="form-group ">
+                                    <input class="form-control" id="url_grupo_form" type="message" placeholder="URL do repositório *" required="required" data-validation-required-message="Introduza um URL." />
+                                    <p class="help-block text-danger"></p>
+                                </div>         
+                                <div class="form-group">
+                                  <input class="form-control" type = "number" id="responsavel_form" placeholder="Responsável do grupo (numero de aluno) *" required="required" data-validation-required-message="Introduza número."></textarea>
+                                  <p class="help-block text-danger"></p>
+                                </div>                  
+                                <div class="form-group">
+                                    <textarea class="form-control" id="elementos_form" placeholder="Elementos do grupo: *" required="required" data-validation-required-message="Introduza os elementos do grupo."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group ">
+                                    <div id="success"></div>
+                                    <button class="btn btn-dark btn-xl text-uppercase" id="botao_criar_grupo" onclick = "criarGrupo('projeto1')" type="submit">Criar grupo</button>
+                                </div>
+                              </div>
+                          </div>   
+                          </form>
+                      </div>
+                    </div>
+                  </div>
+
+                <div id="accordion">
                     <div class="card">
                       <div class="card-header" id="headingOne">
                         <h5 class="mb-0">
@@ -98,8 +140,8 @@
                             <li>Aluno3</li>
                             <li>Aluno4</li>
                             <li>Aluno5</li>
-                          <br><a class="btn btn-primary" href="#" role="button">Download</a>
-                          <a class="btn btn-primary" href="#" role="button">Upload</a>
+                          <br><a class="btn btn-primary" href="https://github.com/grupo9ER/CodeMent-alunos/archive/master.zip" role="button">Download</a>
+                          <a class="btn btn-primary" href="https://github.com/grupo9ER/CodeMent-alunos/upload/master" role="button">Upload</a>
                           <a class="btn btn-primary" href="#" role="button">Email</a>
                         </div>
                       </div>
@@ -120,12 +162,13 @@
                             <li>Aluno8</li>
                             <li>Aluno9</li>
                             <li>Aluno10</li>
-                          <br><a class="btn btn-primary" href="#" role="button">Download</a>
-                          <a class="btn btn-primary" href="#" role="button">Upload</a>
+                          <br><a class="btn btn-primary" href="https://github.com/grupo9ER/CodeMent-alunos/archive/master.zip" role="button">Download</a>
+                          <a class="btn btn-primary" href="https://github.com/grupo9ER/CodeMent-alunos/upload/master" role="button">Upload</a>
                           <a class="btn btn-primary" href="#" role="button">Email</a>
                         </div>
                       </div>
                     </div>
+                    <p id = "projeto1"></p>
                 </div>
 
                 <br><br>
@@ -176,7 +219,7 @@
                           
                            <!-- Button trigger modal -->
                           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                            Comentário de àudio
+                            Speech-to-text
                           </button>
                           <!-- Modal -->
                           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -329,7 +372,7 @@
                         <div class="card-header" id="headingTen">
                           <h5 class="mb-0">
                             <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
-                              Outro aluno 2 
+                              Outro aluno 2 dafa
                             </button>
                           </h5>
                         </div>
@@ -480,21 +523,21 @@
                         </div>
                         </div>
                       </div>
-                </div>
-
+                  </div>
+              </div>
 
 
 
                 <!-- ER entrega 3-->
                 <br><br>
                 <div class="resume-section-content">
-                    <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                        <div class="flex-grow-1">
-                            <h3 class="mb-0">Projeto - Entrega 3</h3>
-                            <div class="subheading mb-3">Data Limite: dia/mês/ano</div>
-                            <p>O enunciado do projeto já se encontra disponível no moodle. Lá podem encontrar todas as informações que necessitam e poderão contactar-me no caso de dúvidas</p>
-                        </div>
-                        <div class="flex-shrink-0"><span class="text-primary">publicado em: dia/mês/ano</span></div>
+                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                    <div class="flex-grow-1">
+                        <h3 class="mb-0">Projeto - Entrega 3</h3>
+                        <div class="subheading mb-3">Data Limite: dia/mês/ano</div>
+                        <p>O enunciado do projeto já se encontra disponível no moodle. Lá podem encontrar todas as informações que necessitam e poderão contactar-me no caso de dúvidas</p>
+                    </div>
+                    <div class="flex-shrink-0"><span class="text-primary">publicado em: dia/mês/ano</span></div>
                 </div>
 
                 <div id="accordion">
@@ -621,10 +664,6 @@
                         </div>
                       </div>
                 </div>
-
-                
-
-
             </section>
             <hr class="m-0" />
             <!-- EO-->
@@ -689,7 +728,69 @@
               window.location.href = "login.html";
               return;
               }
+
+              var text = "";
+              var data = JSON.parse(localStorage.grupos);
+              var idsecao = 1;
+              
+              
+                  for (i = 0; i < data.length; i++){
+                      var secao = data[i]["secao"];
+                      var onde_escrever = document.getElementById(secao);
+                      var nome = data[i]["nome"];
+                      var url = data[i]["url"];
+                      var responsavel = data[i]["responsavel"];
+                      var elementos = data[i]["elementos"];
+                      
+                  text +="<div class='card'><div class='card-header' id='headingOne'><h5 class='mb-0'><button class='btn btn-link' data-toggle='collapse' data-target='#collapse" + idsecao +"' aria-expanded='true' aria-controls='collapseOne'><strong>"+ nome +"</strong></button></h5></div><div id='collapse" + idsecao + "' class='collapse' aria-labelledby='headingOne' data-parent='#accordion'><div class='card-body'>Responsável:" + responsavel +"<br>" + elementos + "<br><br><a class='btn btn-primary' href='" + url + "/archive/master.zip' role='button'>Download</a>&nbsp<a class='btn btn-primary' href='" + url + "/upload/master'role='button'>Upload</a>&nbsp<a class='btn btn-primary' href='#' role='button'>Email</a>&nbsp"
+                  // text += "<button type='button' class='btn btn-primary' data-toggle='modal' data-target='#exampleModalCenter'>Speech-to-text</button><!-- Modal --><div class='modal fade' id='exampleModalCenter' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'><div class='modal-dialog modal-dialog-centered' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title' id='exampleModalLongTitle'><div id='gUMArea'><div>Deseja gravar: </h5><br>"
+                  // text +=  "<input type='radio' name='media' value='video' checked id='mediaVideo'> Webcam e áudio<input type='radio' name='media' value='audio'>Áudio</div><div class='modal-footer'> <button class='btn btn-primary' data-dismiss='modal' data-toggle='modal' data-target='#exampleModalCenter2' id='gUMbtn'>Gravar</button><button type='button' class='btn btn-secondary' data-dismiss='modal'>Fechar</button></div></div></div></div></div>"
+                  // text +=  "<!-- Modal --><div class='modal fade' id='exampleModalCenter2' tabindex='-1' role='dialog' aria-labelledby='exampleModalCenterTitle' aria-hidden='true'><div class='modal-dialog modal-dialog-centered' role='document'><div class='modal-content'><div class='modal-header'><h5 class='modal-title' id='exampleModalLongTitle'>Grave o seu aúdio </h5><button type='button' class='close' data-dismiss='modal' aria-label='Close'><span aria-hidden='true'>&times;</span></button></div> <br><p> Cliquem em <strong> começar </strong> para gravar e em <strong> finalizar </strong> quando acabar a gravação </p><div class='modal-footer'><div id='btns'><button class='btn btn-primary' id='start'>Começar </button>&nbsp;&nbsp;<button  class='btn btn-danger' id='stop'>Finalizar</button></div></div><div class='modal-body'><div><ul  class='list-unstyled' id='ul'></ul></div></div><main><div id='result'></div><p id='message' hidden aria-hidden='true'>Your browser doesn't support Speech Recognition. Sorry.</p></main></div></div></div></div></div></div>"
+              }
+              onde_escrever.innerHTML += text;
+              idsecao += 1;
             }
+
+            
+
+          function criarGrupo(nome){
+              var grupos;
+              console.log(nome);
+              if(!localStorage.grupos) { grupos = []; }
+              else {
+              grupos = JSON.parse(localStorage.grupos);
+              }
+
+              // nome_grupo_form
+              // url_grupo_form
+              // responsavel_form
+              // elementos_form
+
+
+              if($("#nome_grupo_form").val()!= "" && $("#url_grupo_form").val()!= "" && $("#responsavel_form").val()!="" && $("#elementos_form").val() ){
+                  var currentEvent = {
+                  "nome" : $("#nome_grupo_form").val(),
+                  "url" : $("#url_grupo_form").val(),
+                  "responsavel" : $("#responsavel_form").val(), 
+                  "elementos" : $("#elementos_form").val(),
+                  "secao" : nome,
+              };
+              grupos.push(currentEvent);
+              try {            
+                  localStorage.grupos = JSON.stringify(grupos); 
+                  window.alert("Grupo criado com sucesso!");
+                  return true;          
+              }
+              catch (e) {
+                  if (e == QUOTA_EXCEEDED_ERR) {
+                  alert('Quota exceeded!');
+                  window.alert("Sem espaço para criar evento!");
+                  }   
+                }
+              }
+            }
+
+
 
             window.addEventListener("DOMContentLoaded", () => {
             const button = document.getElementById("start");

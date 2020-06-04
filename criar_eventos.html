@@ -132,34 +132,34 @@
 
 
     $("#sendMessageButton").click(function(){
-    var eventos;
+        var eventos;
 
-    if(!localStorage.eventos) { eventos = []; }
-    else {
-      eventos = JSON.parse(localStorage.eventos);
-    }
+        if(!localStorage.eventos) { eventos = []; }
+        else {
+        eventos = JSON.parse(localStorage.eventos);
+        }
 
-    if($("#disciplina").val()!= "" && $("#data").val()!= "" && $("#message").val()!="" && $("#nome").val() ){
-        var currentEvent = {
-        "disciplina" : $("#disciplina").val(),
-        "nome" : $("#nome").val(),
-        "data" : $("#data").val(), 
-        "message" : $("#message").val(),
-    };
-    eventos.push(currentEvent);
-    try {            
-        localStorage.eventos = JSON.stringify(eventos); 
-        console.log("The data was saved.");
-        window.alert("Evento criado com sucesso!");
-        return true;          
-    }
-    catch (e) {
-        if (e == QUOTA_EXCEEDED_ERR) {
-        alert('Quota exceeded!');
-        window.alert("Sem espaço para criar evento!");
-        }   
-    }
-    }
+        if($("#disciplina").val()!= "" && $("#data").val()!= "" && $("#message").val()!="" && $("#nome").val() ){
+            var currentEvent = {
+            "disciplina" : $("#disciplina").val(),
+            "nome" : $("#nome").val(),
+            "data" : $("#data").val(), 
+            "message" : $("#message").val(),
+        };
+        eventos.push(currentEvent);
+        try {            
+            localStorage.eventos = JSON.stringify(eventos); 
+            console.log("The data was saved.");
+            window.alert("Evento criado com sucesso!");
+            return true;          
+        }
+        catch (e) {
+            if (e == QUOTA_EXCEEDED_ERR) {
+            alert('Quota exceeded!');
+            window.alert("Sem espaço para criar evento!");
+            }   
+        }
+        }
     });
 
     </script>
