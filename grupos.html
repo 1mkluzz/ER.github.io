@@ -7,8 +7,7 @@
         <meta name="author" content="" />
         <title>Resume - Start Bootstrap Theme</title>
         <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+       
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
@@ -16,13 +15,7 @@
         <link href="css/styles_grupos.css" rel="stylesheet" />
 
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-        <!-- Third party plugin JS-->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts_grupo.js"></script>
+     
         
     </head>
     
@@ -680,60 +673,68 @@
             </section>
         </div>
 
-            <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts_grupo.js"></script>
+        <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="js/recorder.js"></script>
 
         <script>
-
-        window.addEventListener("DOMContentLoaded", () => {
-        const button = document.getElementById("start");
-        const button_fechar = document.getElementById("stop");
-        const result = document.getElementById("result");
-        const main = document.getElementsByTagName("main")[0];
-        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-        if (typeof SpeechRecognition === "undefined") {
-            button.remove();
-            const message = document.getElementById("message");
-            message.removeAttribute("hidden");
-            message.setAttribute("aria-hidden", "false");
-        } else {
-            let listening = false;
-            const recognition = new SpeechRecognition();
-            const start = () => {
-                recognition.start();
-                button.textContent = "Começar";
-                main.classList.add("speaking");
-            };
-            const stop = () => {
-                recognition.stop();
-               // button.textContent = "Começar";
-                main.classList.remove("speaking");
-            };
-            const onResult = event => {
-                result.innerHTML = "";
-                for (const res of event.results) {
-                    const text = document.createTextNode(res[0].transcript);
-                    const p = document.createElement("p");
-                    if (res.isFinal) {
-                    p.classList.add("final");
+            window.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("start");
+            const button_fechar = document.getElementById("stop");
+            const result = document.getElementById("result");
+            const main = document.getElementsByTagName("main")[0];
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+            if (typeof SpeechRecognition === "undefined") {
+                button.remove();
+                const message = document.getElementById("message");
+                message.removeAttribute("hidden");
+                message.setAttribute("aria-hidden", "false");
+            } else {
+                let listening = false;
+                const recognition = new SpeechRecognition();
+                const start = () => {
+                    recognition.start();
+                    button.textContent = "Começar";
+                    main.classList.add("speaking");
+                };
+                const stop = () => {
+                    recognition.stop();
+                  // button.textContent = "Começar";
+                    main.classList.remove("speaking");
+                };
+                const onResult = event => {
+                    result.innerHTML = "";
+                    for (const res of event.results) {
+                        const text = document.createTextNode(res[0].transcript);
+                        const p = document.createElement("p");
+                        if (res.isFinal) {
+                        p.classList.add("final");
+                        }
+                        p.appendChild(text);
+                        result.appendChild(p);
                     }
-                    p.appendChild(text);
-                    result.appendChild(p);
                 }
-            }
-            recognition.continuous = true;
-            recognition.interimResults = true;
-            recognition.addEventListener("result", onResult);
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                recognition.addEventListener("result", onResult);
 
-            button.addEventListener("click", () => {
-                start();
-            });
-            button_fechar.addEventListener("click", () => {
-                stop();
-            });
-        }
-    });
+                button.addEventListener("click", () => {
+                    start();
+                });
+                button_fechar.addEventListener("click", () => {
+                    stop();
+                });
+            }
+          });
         </script>
     </body>
 </html>
