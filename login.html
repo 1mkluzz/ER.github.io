@@ -5,9 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-  
-  
-  <!-- <script src="../js/scripts.js"></script> -->
 
   <title>CodeMent - Login</title>
 
@@ -86,10 +83,19 @@
       </div>
   </div>
 
+  
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript' src='http://www.101greatgoals.com/wp-includes/js/jquery/jquery.js?ver=1.7.1%27%3E"></script>
+  <!--<script src="../js/scripts.js"></script> -->
+
   <!--scripts-->
   <script>
-    jQuery(document).ready( function($){
-    //$(document).ready(function () {
+    //jQuery(document).ready( function($){
+    $(document).ready(function () {
       $('#mytooltip').attr('data-html', 'true');
       $('#mytooltip').attr('title', '\"discente\"<br>\"docente\"');
       $('#reset_tooltip').attr('data-html', 'true');
@@ -97,8 +103,8 @@
       $('[data-toggle="tooltip"]').tooltip();     
     });
 
-    //$("#reset_tooltip").on('click', function(){
-    jQuery("#reset_tooltip").on('click', function($){
+    $("#reset_tooltip").on('click', function(){
+    //jQuery("#reset_tooltip").on('click', function($){
       if (confirm("Apagar todos os dados?")) {     
           } else {
         return;
@@ -108,8 +114,8 @@
     });
 
 
-    //$("#submit").click(function(){
-    jQuery('#submit').click(function($){
+    $("#submit").click(function(){
+    //jQuery('#submit').click(function($){
     
       var users;
         if(!sessionStorage.users) { users = []; }
@@ -170,10 +176,5 @@
   </script>
 
 </body>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-  <script type="text/javascript' src='http://www.101greatgoals.com/wp-includes/js/jquery/jquery.js?ver=1.7.1%27%3E"></script>
 
 </html>
