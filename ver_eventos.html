@@ -32,7 +32,7 @@
                 <a href="index.html" class= "navbar-brand js-scroll-trigger" src="https://codingforspeed.com/wp-content/uploads/2018/11/laptop-coding-editor.jpg"><b>CodeMent</b> </a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="criar_eventos.html">Criar Eventos</a></li>
+                        <li id = "criar" class="nav-item"><a class="nav-link js-scroll-trigger" href="criar_eventos.html">Criar Eventos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Ver Eventos</a></li>
                         
                         
@@ -74,6 +74,13 @@
                 window.location.href = "login.html";
                 return;
             }
+
+            var data = JSON.parse(sessionStorage.users);        
+            var pwd = data[0]["password"]
+            //console.log(pwd);
+            if ( document.getElementById("criar").style.display != "none" && pwd == "discente"){
+                document.getElementById("criar").style.display = "none";  
+            }   
 
             var text = "";
             var data = JSON.parse(localStorage.eventos);
