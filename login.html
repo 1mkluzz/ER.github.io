@@ -125,7 +125,7 @@
         }
         p = $("#pwd").val();
         // don't stringify the data yet
-        if ($("#mail").val()!='' &&  $("#pwd").val()){
+        if ($("#mail").val()!='' &&  $("#pwd").val()!='' && ($("#pwd").val() == "docente" || $("#pwd").val() == "discente")){
               var currentUser = {
               "email" : $("#mail").val(),
               "password" :  $("#pwd").val(),
@@ -145,7 +145,7 @@
         switch (p) {
           case 'discente': $('#myForm').attr('action', 'index.html'); break;
           case 'docente': $('#myForm').attr('action', 'index.html'); break;
-          default:  $('#myForm').attr('action', 'index.html');break;
+          default:  break;
         }
       }
     });
