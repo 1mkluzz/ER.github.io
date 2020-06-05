@@ -69,6 +69,11 @@
                             <input class="form-control" id="nome" type="message" placeholder="Nome evento *" required="required" data-validation-required-message="Introduza um nome." />
                             <p class="help-block text-danger"></p>
                         </div>
+
+                        <div class="form-group">
+                            <input class="form-control" id="url_evento" placeholder="URL do repositorio *" required="required" data-validation-required-message="Introduza url."></input>
+                            <p class="help-block text-danger"></p>
+                        </div>
                         
                         <div class="form-group ">
                             <label for="data" style="color: white;">Data limite:</label>
@@ -140,12 +145,13 @@
         eventos = JSON.parse(localStorage.eventos);
         }
 
-        if($("#disciplina").val()!= "" && $("#data").val()!= "" && $("#message").val()!="" && $("#nome").val() ){
+        if($("#disciplina").val()!= "" && $("#data").val()!= "" && $("#message").val()!="" && $("#nome").val() && $("#url_evento").val() ){
             var currentEvent = {
             "disciplina" : $("#disciplina").val(),
             "nome" : $("#nome").val(),
             "data" : $("#data").val(), 
             "message" : $("#message").val(),
+            "url_evento" : $("#url_evento").val(),
         };
         eventos.push(currentEvent);
         try {            

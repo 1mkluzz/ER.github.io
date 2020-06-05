@@ -67,12 +67,33 @@ function makeLink(){
     , mt = document.createElement(media.tag)
     , hf = document.createElement('a')
   ;
+  var text = document.getElementById("result_final").innerHTML,
+      blob2 = new Blob([text], { type: 'text/plain' }),
+      anchor = document.createElement('a'),
+      li2 = document.createElement('li'),
+      hf2 = document.createElement('a')
+      ;
+
+  anchor.href = (window.webkitURL || window.URL).createObjectURL(blob2);
+  anchor.download = `download ${counter} .txt`;
+  anchor.dataset.downloadurl = ['text/plain', anchor.download, anchor.href].join(':');
+  //anchor.click();
+
+  // ficheiro audio e botoes audio box
   mt.controls = true;
   mt.src = url;
   hf.href = url;
-  hf.download = `${counter++}${media.ext}`;
-  hf.innerHTML = `donwload ${hf.download}`;
+  hf.download = `download_${counter}${media.ext}`;
+  hf.innerHTML = `</br>download_${counter}${media.ext}`;
   li.appendChild(mt);
   li.appendChild(hf);
   ul.appendChild(li);
+
+
+  // ficheiro texto
+  hf2.href = (window.webkitURL || window.URL).createObjectURL(blob2);
+  hf2.download = `download_${counter}.txt`;
+  hf2.innerHTML = `download_${counter++}.txt`;
+  li2.appendChild(hf2);
+  ul.appendChild(li2);
 }
