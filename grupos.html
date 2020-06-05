@@ -813,7 +813,9 @@
                   </div>
                 </div>
               </div>
+              <p id="eventos_er"></br></br></p>
                 </div>
+                
             </section>
             <!-- Notificaçoes-->
 
@@ -824,7 +826,7 @@
                     <h5> Aqui poderá deixar o seu comentário de aúdio</h5>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-                      Speech-to-text
+                      Esclarecer dúvida
                     </button>
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -1006,8 +1008,8 @@
                       
                   }
                 }
-                eventos.innerHTML += text_er;
-                eventos_eda.innerHTML += text_eda;
+                if (text_er != null){eventos.innerHTML += text_er;}
+                if (text_eda != null){eventos_eda.innerHTML += text_eda;}
               }
 
             }
@@ -1069,7 +1071,7 @@
                 const recognition = new SpeechRecognition();
                 const start = () => {
                     recognition.start();
-                    button.textContent = "Começar";
+                   // button.textContent = "Começar";
                     main.classList.add("speaking");
                 };
                 const stop = () => {
@@ -1082,6 +1084,7 @@
                     for (const res of event.results) {
                         const text = document.createTextNode(res[0].transcript);
                         const p = document.createElement("p");
+                        p.setAttribute("id","result_final");
                         if (res.isFinal) {
                         p.classList.add("final");
                         }
