@@ -965,9 +965,10 @@
                       var onde_escrever = document.getElementById("ER_duvidas");
                       var aluno = data[i]["aluno"];
                       var url = data[i]["url"];
-
+                      var cadeira = data[i]["cadeira"];
+                      var nome = aluno + " - " + cadeira;
                     }
-                    text +="<div id='accordion'><div class='card'><div class='card-header' id='headingduvidas'><h5 class='mb-0'><button class='btn btn-link' data-toggle='collapse' data-target='#collapse" + idsecao + "' aria-expanded='true' aria-controls='collapseduvidas'><strong>" + aluno +"</strong> </button></h5></div><div id='collapse" + idsecao + "' class='collapse' aria-labelledby='headingduvidas' data-parent='#accordion'><div class='card-body'><br><a class='btn btn-primary' href='" + url + "/archive/master.zip' role='button'>Download</a>&nbsp<a class='btn btn-primary' href='" + url + "/upload/master' role='button'>Upload</a>&nbsp<a class='btn btn-primary' href='#' role='button'>Email</a></div></div></div></div>";
+                    text +="<div id='accordion'><div class='card'><div class='card-header' id='headingduvidas'><h5 class='mb-0'><button class='btn btn-link' data-toggle='collapse' data-target='#collapse" + idsecao + "' aria-expanded='true' aria-controls='collapseduvidas'><strong>" + nome +"</strong> </button></h5></div><div id='collapse" + idsecao + "' class='collapse' aria-labelledby='headingduvidas' data-parent='#accordion'><div class='card-body'><br><a class='btn btn-primary' href='" + url + "/archive/master.zip' role='button'>Download</a>&nbsp<a class='btn btn-primary' href='" + url + "/upload/master' role='button'>Upload</a>&nbsp<a class='btn btn-primary' href='#' role='button'>Email</a></div></div></div></div>";
                   }
                 onde_escrever.innerHTML += text;
                 idsecao += 1;

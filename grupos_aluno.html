@@ -117,6 +117,7 @@
                         <div class="row justify-content-center">
                             <div class="col-sm-7">
                               <div class="form-group ">
+                                <p></br>Este é o repositório onde vais introduzir as tuas dúvidas.</p>
                                   <input class="form-control" id="url_duvida_form" type="message" placeholder="URL do repositório *" required="required" data-validation-required-message="Introduza um URL." />
                                   <p class="help-block text-danger"></p>
                               </div>         
@@ -283,12 +284,12 @@
 
           if (localStorage.duvidas != null){
             var data_duvidas= JSON.parse(localStorage.duvidas);
-          
+            
             console.log(data_duvidas[0]["esconder"]);
             var x = document.getElementById("card-header_duvida");
             x.style.display = "none";
             var p =  document.getElementById("botoes_duvida");
-            p.innerHTML = "<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/archive/master.zip' role='button'>Download</a>&nbsp<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/upload/master' role='button'>Upload</a>";
+            p.innerHTML = "<p></br>Utiliza estes botões para esclarecer dúvidas com o docente.</p><a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/archive/master.zip' role='button'>Download</a>&nbsp<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/upload/master' role='button'>Upload</a>";
           }
           else if (localStorage.duvidas == null){
             var x = document.getElementById("card-header_duvida");
