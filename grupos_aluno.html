@@ -244,8 +244,7 @@
               window.location.href = "login.html";
               return;
           }
-
-          function load_events(){
+          if (localStorage.eventos != null){
             var text_er = "";
             var text_ihc = "";
             var data = JSON.parse(localStorage.eventos);
@@ -282,21 +281,21 @@
           }
 
 
-        if (localStorage.duvidas != null){
-          var data_duvidas= JSON.parse(localStorage.duvidas);
-        
-          console.log(data_duvidas[0]["esconder"]);
-          var x = document.getElementById("card-header_duvida");
-          x.style.display = "none";
-          var p =  document.getElementById("botoes_duvida");
-          p.innerHTML = "<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/archive/master.zip' role='button'>Download</a>&nbsp<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/upload/master' role='button'>Upload</a>";
-        }
-        else {
-          var x = document.getElementById("card-header_duvida");
-          x.style.display ="block";
-          var p =  document.getElementById("botoes_duvida");
-          p.innerHTML = "";
-        }
+          if (localStorage.duvidas != null){
+            var data_duvidas= JSON.parse(localStorage.duvidas);
+          
+            console.log(data_duvidas[0]["esconder"]);
+            var x = document.getElementById("card-header_duvida");
+            x.style.display = "none";
+            var p =  document.getElementById("botoes_duvida");
+            p.innerHTML = "<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/archive/master.zip' role='button'>Download</a>&nbsp<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/upload/master' role='button'>Upload</a>";
+          }
+          else if (localStorage.duvidas == null){
+            var x = document.getElementById("card-header_duvida");
+            x.style.display ="block";
+            var p =  document.getElementById("botoes_duvida");
+            p.innerHTML = "";
+          }
             
       }
 

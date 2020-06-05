@@ -113,12 +113,12 @@
                 
                 var eventos = document.getElementById("eventos");
                     for (i = 0; i < data.length; i++){
-
+                        var nome = data[i]["nome"];
                         var disciplina = data[i]["disciplina"];
                         var datalimite = data[i]["data"];
                         var message = data[i]["message"];
                     
-                    text += "Disciplina:" + "       " + disciplina +"<br> "+ "Data Limite:" + "      " + datalimite + "<br>" +  "Informação:" + "        " + message + "<br><br><br>";
+                    text += "Nome: " + nome + "</br>Disciplina:" + "       " + disciplina +"<br> "+ "Data Limite:" + "      " + datalimite + "<br>" +  "Informação:" + "        " + message + "<br><br><br>";
                 }
                 eventos.innerHTML += text;
                 }

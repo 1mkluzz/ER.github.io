@@ -52,12 +52,13 @@
                        <!-- <a href="#" id="imageDropdown" data-toggle="dropdown">
                                 <img src="https://shifter.sapo.pt/wp-content/uploads/2020/04/GitHub-Gratuito-Shifter_01.jpg" style="width:80px;height:80px;">
                               </a>-->
-                          Grupos
+                          Cadeira
                         </button>
                         <div class="dropdown-menu dropdown-primary " id="botao">
-                         <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Search"> 
-                           <a class="dropdown-item" id ="href_ihc" href = "grupos.html#EDA">Grupo EDA</a>
-                            <a class="dropdown-item" id ="href_er" href="grupos.html#ER">Grupo ER</a>
+                         <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Search">
+                            <a class="dropdown-item" id ="criar_cadeira" href = "#">Criar Cadeira</a> 
+                           <a class="dropdown-item" id ="href_ihc" href = "grupos.html#EDA">EDA</a>
+                            <a class="dropdown-item" id ="href_er" href="grupos.html#ER">ER</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Outro</a>
                         </div>
@@ -277,9 +278,12 @@
             if ( document.getElementById("eventos").style.display != "none" && pwd == "discente"){
                 document.getElementById("eventos").style.display = "none";  
             }
+            if ( document.getElementById("criar_cadeira").style.display != "none" && pwd == "discente"){
+                document.getElementById("criar_cadeira").style.display = "none";  
+            }
             if (pwd == "discente"){
                 document.getElementById("href_ihc").href="grupos_aluno.html#IHC";
-                document.getElementById("href_ihc").innerHTML="Grupo IHC";
+                document.getElementById("href_ihc").innerHTML="IHC";
                 document.getElementById("href_er").href="grupos_aluno.html#ER";  
             }       
         }
