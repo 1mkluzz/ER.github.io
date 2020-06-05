@@ -35,6 +35,7 @@
         $(".navbar-collapse").collapse("hide");
     });
 
+
     // Activate scrollspy to add active class to navbar items on scroll
     $("body").scrollspy({
         target: "#mainNav",
@@ -54,12 +55,30 @@
     // Collapse the navbar when page is scrolled
     $(window).scroll(navbarCollapse);
 
-    $('#botao').mdbDropSearch();
+    
 
 })(jQuery); // End of use strict
 
 //scripts
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
 //para usar o email inserido no login
 function setTextoTop(s) {
     var e_mail = localStorage.getItem('e_mail');
@@ -95,6 +114,7 @@ function setTextoTop(s) {
     var current_date_short = current_date_full.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitDay;
     //console.log(current_date_short);
     $("#datePicker").attr('min', current_date_short);
+    
   }
   
   function getNum(s) {
@@ -532,4 +552,6 @@ function setTextoTop(s) {
     return true;
   }
 
+  
 
+  

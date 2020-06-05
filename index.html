@@ -14,6 +14,7 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/dropdown.css" rel="stylesheet" />
 
     </head>
     <body id="page-top" style="background-color:rgb(31, 31, 31);" onload = "onLoad()">
@@ -48,28 +49,35 @@
                 </div>
                 <div class="row justify-content-around rounded-lg ">
                     <div class="btn-group" >
-                        <button class="btn btn-xl  dropdown-toggle bg-white" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                       <!-- <a href="#" id="imageDropdown" data-toggle="dropdown">
-                                <img src="https://shifter.sapo.pt/wp-content/uploads/2020/04/GitHub-Gratuito-Shifter_01.jpg" style="width:80px;height:80px;">
-                              </a>-->
+                    <div class="dropdown">
+                        <button onclick="myFunction()" class="dropbtn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Cadeira
                         </button>
-                        <div class="dropdown-menu dropdown-primary " id="botao">
+                        <!--<button onclick="myFunction()" class="dropbtn">Dropdown</button>-->
+                        <div id="myDropdown" class="dropdown-content">
+                            <input type="text" placeholder="Pesquisar.." id="myInput" onkeyup="filterFunction()">
+                            <a href="#" id ="criar_cadeira">Criar Cadeira</a>
+                            <a href="grupos.html#EDA">EDA</a>
+                            <a href="grupos.html#ER">ER</a>
+                        </div>
+                        </div>
+                    </div>
+                    <!-- <a href="#" id="imageDropdown" data-toggle="dropdown">
+                                <img src="https://shifter.sapo.pt/wp-content/uploads/2020/04/GitHub-Gratuito-Shifter_01.jpg" style="width:80px;height:80px;">
+                              </a>-->
+                    <!--<div class="dropdown-menu dropdown-primary " id="myDropdown">
                          <input class="form-control" type="text" placeholder="Pesquisar" aria-label="Search">
                             <a class="dropdown-item" id ="criar_cadeira" href = "#">Criar Cadeira</a> 
                            <a class="dropdown-item" id ="href_ihc" href = "grupos.html#EDA">EDA</a>
                             <a class="dropdown-item" id ="href_er" href="grupos.html#ER">ER</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Outro</a>
-                        </div>
-                    </div>
-
+                        </div>-->
                     <div class="btn-group">
                         <button class="btn  btn-xl dropdown-toggle bg-white " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Eventos
                         </button>
                         <div class="dropdown-menu" id="botao">
-                         <input  class="form-control" type="text" placeholder="Pesquisar" aria-label="Search">
                              <a id="eventos" class="dropdown-item" href="criar_eventos.html" >Criar Eventos</a>
                             <a class="dropdown-item" href="ver_eventos.html">Visualizar Eventos</a>
                             <div class="dropdown-divider"></div>
@@ -257,6 +265,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <!-- Third party plugin JS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- Contact form JS-->
     <script src="assets/mail/jqBootstrapValidation.js"></script>
     <script src="assets/mail/contact_me.js"></script>
@@ -264,6 +273,7 @@
     <script src="js/scripts.js"></script>
 
     <script>
+    
         function onLoad() {
             if (sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer") != null) {
                 sessionStorage.removeItem("IsThisFirstTime_Log_From_LiveServer");
@@ -293,7 +303,10 @@
             window.location.href = "login.html";
         }
 
+        
+
     </script>
+
 
     </body>
 
