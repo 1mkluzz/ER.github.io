@@ -14,7 +14,7 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles_grupos.css" rel="stylesheet" />
     </head>
-    <body id="page-top" onload = "load_events()">
+    <body id="page-top" onload = "onLoad()">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
           <a href="index.html" class="navbar-brand js-scroll-trigger" src="https://codingforspeed.com/wp-content/uploads/2018/11/laptop-coding-editor.jpg"><b>CODEMENT</b></a>
@@ -101,28 +101,28 @@
                     </div>
                   <div class="flex-shrink-0"><span class="text-primary">publicado em: dia/mês/ano</span></div>
               </div>
-              <div id="accordion_criar_duvida">
-                <div class="card">
-                  <div class="card-header" id="headingOne">
+              <div id="accordion_criar_duvida_er">
+                <div class="card_duvida">
+                  <div class="card-header_duvida" id="card-header_duvida">
                     <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#criar_duvida" aria-expanded="true" aria-controls="collapseOne">
+                      <button class="btn btn-link" data-toggle="collapse" data-target="#criar_duvida" id = "botao_duvida" aria-expanded="true" aria-controls="collapseOne">
                         <strong> Criar</strong>
                       </button>
                     </h5>
                   </div>
                   <!-- criar duvida -->
-                  <div id="criar_duvida" class="collapse" aria-labelledby="headingOne" data-parent="#accordion_criar_duvida">
+                  <div id="criar_duvida" class="collapse" aria-labelledby="headingOne" data-parent="#accordion_criar_duvida_er">
                     <div class="card-body">
                       <form id="contactForm" name="sentMessage" novalidate="novalidate">
                         <div class="row justify-content-center">
                             <div class="col-sm-7">
                               <div class="form-group ">
-                                  <input class="form-control" id="url_grupo_form" type="message" placeholder="URL do repositório *" required="required" data-validation-required-message="Introduza um URL." />
+                                  <input class="form-control" id="url_duvida_form" type="message" placeholder="URL do repositório *" required="required" data-validation-required-message="Introduza um URL." />
                                   <p class="help-block text-danger"></p>
                               </div>         
                               <div class="form-group ">
                                   <div id="success"></div>
-                                  <button class="btn btn-dark btn-xl text-uppercase" id="botao_criar_grupo" onclick = "criarGrupo('projeto1')" type="submit">Criar</button>
+                                  <button class="btn btn-dark btn-xl text-uppercase" id="botao_criar_grupo" onclick = "criarDuvida('ER','card-header_duvida')" type="submit">Criar</button>
                               </div>
                             </div>
                         </div>   
@@ -130,6 +130,7 @@
                   </div>
                 </div>
               </div>
+              <p id = "botoes_duvida"></p>
               <!-- Dúvidas -->
               <br><br>
               <div class="resume-section-content">
@@ -235,7 +236,7 @@
 
     <script>
 
-      function load_events() {
+      function onLoad() {
           if (sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer") != null) {
                 sessionStorage.removeItem("IsThisFirstTime_Log_From_LiveServer");
           }
@@ -244,6 +245,7 @@
               return;
           }
 
+          function load_events(){
             var text_er = "";
             var text_ihc = "";
             var data = JSON.parse(localStorage.eventos);
@@ -278,6 +280,63 @@
             eventos.innerHTML += text_er;
             eventos_ihc.innerHTML += text_ihc;
           }
+
+
+        if (localStorage.duvidas != null){
+          var data_duvidas= JSON.parse(localStorage.duvidas);
+        
+          console.log(data_duvidas[0]["esconder"]);
+          var x = document.getElementById("card-header_duvida");
+          x.style.display = "none";
+          var p =  document.getElementById("botoes_duvida");
+          p.innerHTML = "<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/archive/master.zip' role='button'>Download</a>&nbsp<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/upload/master' role='button'>Upload</a>";
+        }
+        else {
+          var x = document.getElementById("card-header_duvida");
+          x.style.display ="block";
+          var p =  document.getElementById("botoes_duvida");
+          p.innerHTML = "";
+        }
+            
+      }
+
+
+        function criarDuvida(cadeira, esconder){
+              var duvidas;
+              var data_login = JSON.parse(sessionStorage.users);
+              var username = data_login[0]["email"];
+
+              if(!localStorage.duvidas) { duvidas = []; }
+              else {
+                duvidas = JSON.parse(localStorage.duvidas);
+              }
+
+              if($("#url").val()!= ""){
+                  var currentEvent = {
+                  "cadeira" : cadeira,
+                  "url" : $("#url_duvida_form").val(),
+                  "aluno" : username,
+                  "esconder" : esconder,
+              };
+
+              duvidas.push(currentEvent);
+              
+              try {            
+                  localStorage.duvidas = JSON.stringify(duvidas); 
+                  window.alert("Criado com sucesso!");
+                  location.reload();
+                  
+                  //return true;          
+              }
+              catch (e) {
+                  if (e == QUOTA_EXCEEDED_ERR) {
+                  alert('Quota exceeded!');
+                  window.alert("Sem espaço para criar!");
+                  }   
+                }
+              }
+              
+            }
 
     </script>
 
