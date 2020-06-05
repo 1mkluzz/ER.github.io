@@ -151,17 +151,17 @@ hr {
 .sidebar-boxed.sidebar-dark .sidenav a {
     color: #fff;
     margin-bottom: 0px;
-    border-bottom: 1px solid #decece;
+    border-bottom: 1px solid #000000;
 }
 .sidebar-boxed.sidebar-dark {
-    background-color: #343a40 ;
+    background-color: #000000 ;
 }
 .sidenav li.active>a {
     background: #fff;
     color: #222;
 }
 .sidebar-boxed .sidenav>li:first-child {
-    border-top: 1px solid #343a40;
+    border-top: 1px solid #000000;
 }
 .sidebar-boxed.sidebar-dark .sidenav a.open, 
 .sidebar-boxed.sidebar-dark .sidenav a.open+ul, 

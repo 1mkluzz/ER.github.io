@@ -36,8 +36,9 @@
             <li><a href="#Introucao">Indrodução</a></li>
             <li><a href="#mudancas">Mudanças feitas</a></li>
             <li><a href="#Requisitos">Requisitos Principais</a></li>
-            <li><a href="#Exp_Requisitos">Explicar Requisitos</a></li>
-            <li><a href="#Organizacao">Organização</a></li>
+            <li><a href="#aceder-sistema">Como aceder ao Sistema</a></li>
+            <li><a href="#Docente">Docente</a></li>
+            <li><a href="#Aluno">Aluno</a></li>
             <li><a href="#navigacao">Navigação</a></li>
             <li><a href="#navegacao-Telemovel">Navegação para telemóvel</a></li>
             <li><a href="#informacao">Informações</a></li>
@@ -139,11 +140,22 @@
                 </ul>
             </section>
 
-             <section id="Exp_Requisitos">
-                <h3 class="intro">Explicação dos Requisitos</h3>
-                <p>Explicar onde cada requisito está implementado no sistema </p>
+             <section id="aceder-sistema">
+                <h3 class="intro">Como aceder ao nosso sistema</h3>
+                <p>
+                O utilizador ao entrar no sistema necessita de efetuar o login. Este terá de introduzir o seu número de indentificação, 
+                e a sua palavra-chave. Visto que o projeto ainda se encontrar numa fase de protótipo o utilizador poderá escolher entre a 
+                opção de docente ou discente (indicado no retângulo), e após clicar num desses respetivos botões a palavra passe será introduzia automaticamente,
+                escrevendo respetivamente a primeira para a opção de entrar como docente no sistema e a segunda como discente. 
+                </p>
+                <img src="assets/img/Login.png" alt="Passo1" >
                 <hr>
-                <strong></strong><br />
+                <p>
+                </p>
+
+
+                <strong></strong>
+                <br/>
                 
                 <div>
                     <p></p>
@@ -153,13 +165,217 @@
                 </div>
             </section>
 
-            <section id="Organizacao">
-                <h3 class="intro">Organição</h3>
+            <section id="Docente">
+                <h3 class="intro">Todas a funcionalidades do Docente </h3>
+                
+                <p>
+                O docente tem a funcionalidade de corrigir e ajudar os discentes em todas dúvidas de código que possam existir.  Para uma maior eficácia 
+                e simplicidade, este usufrui de ferramentas, como o speech-to-text; assinalar blocos de código e comentar linhas de código. Para um fácil envio 
+                 e receção de documentos, utilizamos a plataforma do Github, como suporte ao sistema. 
+        
+                </p>
+                <h3>Acessar à cadeira</h3>
+                <p>
+                No Menu inicial o docente tem a capacidade de acessar às suas cadeiras leccionadas, como podemos observar na imagem. 
+                Para além disto, este usufrui de um botão para criar nova cadeira, sendo que não está atualmente implementado 
+                (Não é requisito prioritário). 
+                </p>
+
+                <img src="assets/img/cadeira-docente.png" alt="Passo1" >
                 <hr>
-                <p>Organização do site.</p>
-                <div>
-                    <img src="assets/img/" alt="Organização do sistema">
+                
+                <h3>Criar evento </h3>
+                <p>
+                O docente, se clicar no botão <strong> Eventos </strong> terá disponivel 2 funcionalidades, é permitido criar e visualizar eventos. 
+                Caso o docente queira criar um evento, poderá expecificar a disiciplina, nome do eventos, data do evento e a informação 
+                correspondente do mesmo. Após criado o evento o docente recebe um feedback para verificar que o evento foi criado com sucesso. 
+                </p>
+                <h4><mark>Passo 1</mark></h4>
+                <img src="assets/img/Botao_CriarEnvento.png" alt="Passo1" >
+                <h4><mark>Passo 2</mark></h4>
+                <img src="assets/img/Criar_Evento.png" alt="Passo1" >
+                <hr>
+
+                 
+                <h3>Visualizar evento </h3>
+                <p>
+                No sistema, o docente  ao clicar no botão <strong> Eventos </strong>. Poderá escolher a opção Visualizar Eventos, deste modo consegue 
+                ver toda a informação acerca dos mesmos tal como a cadeira, data e informação que digitou.
+                </p>
+                <h4><mark>Passo 1</mark></h4>
+                <img src="assets/img/Botao_Visualizar_Evento.png" alt="Passo1" >
+                <h4><mark>Passo 2</mark></h4>
+                <img src="assets/img/Visualizar Evento.png" alt="Passo1" >
+                <hr>
+
+                <h3>Visualizar cadeiras </h3>
+                <p>
+                Neste separador o docente é capaz de visualizar e navegar pelas suas cadeiras lecionadas em conjunto com a secção de tirar dúvidas aos seus alunos.
+                Em cada cadeira, é possível ver os momentos de avaliação da disciplina (eventos criados pelo docente). As dúvidas são geradas pelos alunos e disponiveis no 
+                ecrâ do docente para que este fornecer ajuda.
+                </p>
+                <img src="assets/img/Visualizar.png" alt="Passo1" >
+                <hr>
+
+                <h3>Adicionar aluno/s</h3>
+                <p>
+                Aqui o docente usufrui da funcionalidade de adicionar um elemento a um momento avaliação. Este poderá ser um grupo de alunos ou um aluno individual. 
+                Para que esta funcionalidade seja devidamente criada é necessário preencher um pequeno formulário com o nome do aluno ou grupo, numero de aluno (no caso de um grupo, 
+                deverá de ser escolhido um delegado para preencher este campo), o(s) nome(s) do(s) aluno(s) e o link do repositório criado pelo(s) aluno(s). Estas informações devem de 
+                ser pedidas aos alunos por parte do docente.
+                </p>
+                <div class="demo1">
+                    Demo 1
                 </div>
+                <img src="assets/img/Criar_Grupo.png" alt="Passo1" >
+                <div class="demo2">
+                    Demo 2
+                </div>
+                <img src="assets/img/Grupo_Criado.png" alt="Passo1" >
+                <hr>
+
+                <h3>Momentos de avaliação /dúvidas</h3>
+                <p>
+                Ao clicar no elemento é possivel ver uma descrição e o nome dos alunos, para além disso o docente dispõe a possibilidade de 
+                realizar o "download" dos ficheiros que estão no repositório partilhado pelo(s) respetivo(s) aluno(s) dando a possibilidade de 
+                ler então o código. O botão "upload" serve para que este, depois de realizar os comentários por voz e texto e eventuais marcações 
+                de código,possa enviar o projeto devolta com o ficheiro de audio criado. Por fim também é disponível a este um acesso rápido de 
+                comunicação com o aluno ou delegado do grupo (botão "email").
+                </p>
+                <img src="assets/img/Momento-Avaliacao.png" alt="Passo1" >
+                <hr>
+
+                <h3>Download</h3>
+                <p>
+                Ao clicar neste botão irá iniciar automaticamente um download dos ficheiros do repositório partilhado pelos discentes. 
+                Este poderá ser encontrado na secção "transfêrencias" do seu browser. 
+                Nota: Os ficheiros de código deverão de ser sempre importado através do IDE Visual Studio Code.
+                </p>
+                <img src="assets/img/Download.png" alt="Passo1" >
+                <hr>
+
+                <h3>Upload</h3>
+                <p>
+                Ao clicar neste botão irá abrir um novo separador no seu browser com uma janela pronta para importar os ficheiros (comentários de voz 
+                e video e ficheiros comentados no código partilhado). Estes poderão ser arrastados para o retângulo ou poderá clicar em "Upload files".
+                </p>
+                <img src="assets/gif/upload.gif" alt="Passo1" >
+                <hr>
+
+                <h3>Speech to text</h3>
+                <p>
+                No lado esquerdo,existe um botão que irá guia-lo para a realização do ficheiro de voz facilitando deste modo o comentário ao código. Após clicar em "esclarecer dúvida"
+                é possível selecionar a opção de gravar uma mensagem de vídeo e voz ou apenas voz. De seguida clique em "gravar", após isto deverá de clicar em começar para gravar e em 
+                finalizar para acabar a gravação. Caso seja necessário clique em permitir gravar o áudio e video no seu browser para iniciar 
+                a captura de som/video. Existe um display em que é possivel reproduzir novamente antes de realizar o download dos ficheiros. Poderá gravar novamente outro comentário se necessário, se não, poderá 
+                clicar no 2 ficheiros gerados (um de voz e video ou apenas voz, e outro ficheiro em texto gerado pelo seu ditado). Estes documentos deverão de ser utilizados 
+                para a realização do upload no repositório do aluno já mencionado anteriormente
+                </p>
+                <img src="assets/gif/speech_to_text.gif" alt="Passo1" >
+                <hr>
+
+                <h3>Marcador</h3>
+                <p>
+                O docente também terá que ter a estansão para  encontrar os marcadores introduzidos pelos discentes, assim possibilita encontrar as dúvidas mais facilmente num ficheiro com muitas linhas de código 
+                pois se o docente clicar no marcado na barra de scroll irá diretamente para a secção do código pretendido pelo discente.
+                </p>
+                <img src="assets/gif/marcador.gif" alt="Passo1" >
+                <hr>
+                
+
+                
+            </section>
+
+            <section id="Aluno">
+
+               <h3 class="intro">Todas a funcionalidades do Aluno </h3>
+                
+                <p>
+                O discente tem a funcionalidade de corrigir e ajudar os discentes em todas dúvidas de código que possam existir.  Para uma maior eficácia 
+                e simplicidade, este usufrui de ferramentas, como o speech-to-text; assinalar blocos de código e comentar linhas de código. Para um fácil envio 
+                 e receção de documentos, utilizamos a plataforma do Github, como suporte ao sistema. 
+        
+                </p>
+                <h3>Acessar à cadeira</h3>
+                <p>
+                No Menu inicial o docente tem a capacidade de acessar às suas cadeiras leccionadas, como podemos observar na imagem. 
+                Para além disto, este usufrui de um botão para criar nova cadeira, sendo que não está atualmente implementado 
+                (Não é requisito prioritário). 
+                </p>
+
+                <img src="assets/img/cadeira-docente.png" alt="Passo1" >
+                <hr>
+                
+                <h3>Visualizar evento </h3>
+                <h4><mark>Passo 1</mark></h4>
+                <p> O aluno consegue visualizar no nosso sistema eventos de avaliação ao clicar a partir da página inicial Eventos Visualizar Eventos. </p>
+                <img src="assets/img/Criar-evento.png" alt="Passo1" >
+                <h4><mark>Passo 2</mark></h4>
+                <p>Após completar o primeiro passou com sucesso irá visualizar a seguinte página que contém a descrição dos eventos em lista.</p>
+                <img src="assets/img/Visu-Evento-Aluno.png" alt="Passo1" >
+                <hr>
+
+                <h3>Visualizar cadeiras </h3>
+                <p>
+                Neste separador o docente é capaz de visualizar e navegar pelas suas cadeiras lecionadas em conjunto com a secção de tirar dúvidas aos seus alunos.
+                Em cada cadeira, é possível ver os momentos de avaliação da disciplina (eventos criados pelo docente). As dúvidas são geradas pelos alunos e disponiveis no 
+                ecrâ do docente para que este fornecer ajuda.
+                </p>
+                <img src="assets/img/Visualizar.png" alt="Passo1" >
+                <hr>
+
+                <h3>Adicionar aluno/s</h3>
+                <p>
+                Aqui o docente usufrui da funcionalidade de adicionar um elemento a um momento avaliação. Este poderá ser um grupo de alunos ou um aluno individual. 
+                Para que esta funcionalidade seja devidamente criada é necessário preencher um pequeno formulário com o nome do aluno ou grupo, numero de aluno (no caso de um grupo, 
+                deverá de ser escolhido um delegado para preencher este campo), o(s) nome(s) do(s) aluno(s) e o link do repositório criado pelo(s) aluno(s). Estas informações devem de 
+                ser pedidas aos alunos por parte do docente.
+                </p>
+                <div class="demo1">
+                    Demo 1
+                </div>
+                <img src="assets/img/Criar_Grupo.png" alt="Passo1" >
+                <div class="demo2">
+                    Demo 2
+                </div>
+                <img src="assets/img/Grupo_Criado.png" alt="Passo1" >
+                <hr>
+
+                <h3>Momentos de avaliação /dúvidas</h3>
+                <p>
+                Ao clicar no elemento é possivel ver uma descrição e o nome dos alunos, para além disso o docente dispõe a possibilidade de 
+                realizar o "download" dos ficheiros que estão no repositório partilhado pelo(s) respetivo(s) aluno(s) dando a possibilidade de 
+                ler então o código. O botão "upload" serve para que este, depois de realizar os comentários por voz e texto e eventuais marcações 
+                de código,possa enviar o projeto devolta com o ficheiro de audio criado. Por fim também é disponível a este um acesso rápido de 
+                comunicação com o aluno ou delegado do grupo (botão "email").
+                </p>
+                <img src="assets/img/Momento-Avaliacao.png" alt="Passo1" >
+                <hr>
+
+                <h3>Download</h3>
+                <p>
+                Ao clicar neste botão irá iniciar automaticamente um download dos ficheiros do repositório partilhado pelos discentes. 
+                Este poderá ser encontrado na secção "transfêrencias" do seu browser. 
+                Nota: Os ficheiros de código deverão de ser sempre importado através do IDE Visual Studio Code.
+                </p>
+                <img src="assets/img/Download.png" alt="Passo1" >
+                <hr>
+
+                <h3>Upload</h3>
+                <p>
+                Ao clicar neste botão irá abrir um novo separador no seu browser com uma janela pronta para importar os ficheiros (comentários de voz 
+                e video e ficheiros comentados no código partilhado). Estes poderão ser arrastados para o retângulo ou poderá clicar em "Upload files".
+                </p>
+                <img src="assets/gif/upload.gif" alt="Passo1" >
+                <hr>
+
+                <h3>Marcador</h3>
+                <p>
+                Ao discente, é possível adicionar um marcador para representar a parte do código em que tem dúvidas, através da extensão "TODO highlight" o discente apenas introduzir dentro do comentário a 
+                seguência de caracteres "FIXME:", automaticamente cria um marcador visível no código e na barra de scroll à direita.
+                </p>
+                <img src="assets/gif/marcador.gif" alt="Passo1" >
+                <hr>
             </section>
 
             <section id="navigacao">
