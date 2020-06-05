@@ -23,9 +23,6 @@
           <a  style="color: rgb(89, 134, 219); text-decoration: none">Sistema de Apoio ao Ensino à Distância</a>
         </h3>
       </div>
-      <!-- <div class="col-md-2 text-white-50" style="text-align: right">
-        <a href="#" class="text-white-50" id="reset_tooltip" data-toggle="tooltip">Clear</a>
-      </div> -->
     </div>
   </div>
 
@@ -52,9 +49,10 @@
 
             <input type="text" name="" class="form-control" id="mail" placeholder="Ex: 2032217" required> 
             <input type="password" class="form-control" id="pwd" name="" placeholder="Palavra passe" required>
+            <p>Passwords:</p>
+            <a class="forgot text-muted" href="#" id="pwd_docente"  data-placement="bottom"><strong>docente</strong></a> 
+            <a class="forgot text-muted" href="#" id="pwd_discente" data-placement="bottom"><strong>discente</strong></a> 
 
-            <a class="forgot text-muted" href="#" id="mytooltip" data-toggle="tooltip" data-placement="bottom"><strong>Palavras passes </strong> disponíves</a> 
-            
             <input type="submit" id = "submit" name="" value="Login" href="#">         
           </form>          
         </div>
@@ -80,6 +78,16 @@
           sessionStorage.removeItem("IsThisFirstTime_Log_From_LiveServer");
       }     
     });
+
+
+    $("#pwd_discente").on('click', function(){
+      document.getElementById("pwd").value = "discente";
+    })
+
+    $("#pwd_docente").on('click', function(){
+      document.getElementById("pwd").value = "docente";
+    })
+
 
     $("#reset_tooltip").on('click', function(){
     //jQuery("#reset_tooltip").on('click', function($){
@@ -126,30 +134,6 @@
       }
     });
 
-
-    // $('#myForm').on('submit', function (e) {
-    //   e.preventDefault();
-    //   var user = $('#pwd').val();
-    //   var e_mail = $('#mail').val();
-    //   var is_checked_lembrar = $('#check_lembrar').is(':checked');
-    //   //console.log(user);
-    //   //console.log(e_mail);
-    //   //console.log(is_checked_lembrar);
-    //   if (e_mail != '') {
-    //     switch (user) {
-    //       case 'discente': $('#myForm').attr('action', 'index.html'); break;
-    //       case 'docente': $('#myForm').attr('action', 'professor.html'); break;
-    //       default:  break;
-    //     }
-    //     //console.log($('#myForm').attr('action'));
-    //     localStorage.setItem('e_mail', e_mail);
-    //     //console.log(localStorage.getItem('e_mail'));
-    //     localStorage.setItem('check_lembrar', is_checked_lembrar);
-    //     //console.log(localStorage.getItem('check_lembrar'));
-    //   }
-
-    //   this.submit();
-    // });
   </script>
 
 </body>
