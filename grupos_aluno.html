@@ -358,19 +358,26 @@
 
           if (localStorage.duvidas != null){
             var data_duvidas= JSON.parse(localStorage.duvidas);
-            
-            console.log(data_duvidas[0]["esconder"]);
-            var x = document.getElementById("card-header_duvida");
-            x.style.display = "none";
-            var p =  document.getElementById("botoes_duvida");
-            p.innerHTML = "<p></br>Utiliza estes botões para esclarecer dúvidas com o docente.</p><a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/archive/master.zip' role='button'>Download</a>&nbsp<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/upload/master' role='button'>Upload</a>";
+            duvidas_text = "";
+            for (i = 0; i < data_duvidas.length; i++){
+              // var x = document.getElementById("card-header_duvida");
+              // x.style.display = "none";
+              url = data_duvidas[i]['url'];
+              username = data_duvidas[i]['aluno'];
+              p =  document.getElementById("botoes_duvida");
+              duvidas_text += "<p></br>Utiliza estes botões para esclarecer dúvidas com o docente.<br>&nbsp&nbsp&nbsp&nbspRepositório criado pelo aluno " + username + "</p><a class='btn btn-primary' href='" + url +"/archive/master.zip' role='button'>Download</a>&nbsp<a class='btn btn-primary' href='" + data_duvidas[0]['url'] +"/upload/master' role='button'>Upload</a>";
+            }
+            p.innerHTML += duvidas_text;
           }
-          else if (localStorage.duvidas == null){
-            var x = document.getElementById("card-header_duvida");
-            x.style.display ="block";
-            var p =  document.getElementById("botoes_duvida");
-            p.innerHTML = "";
-          }
+
+          // "criar" duvida desaparecer
+
+          // else if (localStorage.duvidas == null){
+          //   var x = document.getElementById("card-header_duvida");
+          //   x.style.display ="block";
+          //   var p =  document.getElementById("botoes_duvida");
+          //   p.innerHTML = "";
+          // }
             
       }
 
