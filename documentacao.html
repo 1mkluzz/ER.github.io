@@ -3,12 +3,11 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
 
-    <title>Documentação - CodeMent</title>
+    <title>1Documentação - CodeMent</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/shCore.css">
@@ -34,16 +33,11 @@
         </div>
         <ul class="nav sidenav dropable">
             <li><a href="#Introucao">Indrodução</a></li>
-            <li><a href="#mudancas">Mudanças feitas</a></li>
             <li><a href="#Requisitos">Requisitos Principais</a></li>
             <li><a href="#aceder-sistema">Como aceder ao Sistema</a></li>
             <li><a href="#Docente">Docente</a></li>
-            <li><a href="#Aluno">Aluno</a></li>
-            <li><a href="#navigacao">Navigação</a></li>
-            <li><a href="#navegacao-Telemovel">Navegação para telemóvel</a></li>
-            <li><a href="#informacao">Informações</a></li>
-            <li><a href="#contatos">Formulário de Contatos</a></li>
-            <li><a href="#Homepage">Aparência da Homepage</a></li>
+            <li><a href="#Aluno">Discente</a></li>
+            <li><a href="#stt">Speech-to-text</a></li>
         </ul>
     </aside>
     <!-- Fim Sidebar -->
@@ -108,20 +102,6 @@
                 </div>
             </section>
 
-            <section id="mudancas">
-                <h3 class="intro">Mudanças efectuadas</h3>
-                <p>Explicação das mudanças feitas </p>
-                <hr>
-                <strong></strong><br />
-                
-                <div>
-                    <p></p>
-                    <p>
-                    
-                    </p>
-                </div>
-            </section>
-
             <section id="Requisitos">
                 <h3 class="intro">10 Requisitos Principais</h3>
                 <hr>
@@ -181,23 +161,23 @@
                 (Não é requisito prioritário). 
                 </p>
 
-                <img src="assets/img/cadeira-docente.png" alt="Passo1" >
+                <img src="assets/gif/Docente-Adicionar_Alunos.gif" alt="Passo1" >
                 <hr>
 
                 <h3>Visualizar cadeiras </h3>
                 <p>
                 Neste separador o docente é capaz de visualizar e navegar pelas suas cadeiras lecionadas em conjunto com a secção de tirar dúvidas aos seus alunos.
                 Em cada cadeira, é possível ver os momentos de avaliação da disciplina (eventos criados pelo docente). As dúvidas são geradas pelos alunos e disponiveis no 
-                ecrâ do docente para que este fornecer ajuda.
+                ecrâ do docente para que este forneça ajuda.
                 </p>
                 <img src="assets/img/Visualizar.png" alt="Passo1" >
                 <hr>
                 
                 <h3>Criar evento </h3>
                 <p>
-                O docente, se clicar no botão <strong> Eventos </strong> terá disponivel 2 funcionalidades, é permitido criar e visualizar eventos. 
-                Caso o docente queira criar um evento, poderá expecificar a disiciplina, nome do eventos, data do evento e a informação 
-                correspondente do mesmo. Após criado o evento o docente recebe um feedback para verificar que o evento foi criado com sucesso. 
+                O docente, se clicar no botão <strong> Eventos </strong> terá disponivel 2 funcionalidades, onde é permitido criar e visualizar eventos. 
+                Caso o docente queira criar um evento, poderá especificar a disciplina, nome do eventos, data do evento e a informação 
+                correspondente do mesmo. Após criado o evento, o docente recebe um feedback para verificar que o evento foi criado com sucesso. 
                 </p>
                 <h4><mark>Passo 1</mark></h4>
                 <img src="assets/img/Botao_CriarEnvento.png" alt="Passo1" >
@@ -225,13 +205,9 @@
                 deverá de ser escolhido um delegado para preencher este campo), o(s) nome(s) do(s) aluno(s) e o link do repositório criado pelo(s) aluno(s). Estas informações devem de 
                 ser pedidas aos alunos por parte do docente.
                 </p>
-                <div class="demo1">
-                    Demo 1
-                </div>
+                <h4><mark>Passo 1</mark></h4>
                 <img src="assets/img/Criar_Grupo.png" alt="Passo1" >
-                <div class="demo2">
-                    Demo 2
-                </div>
+                <h4><mark>Passo 2</mark></h4>
                 <img src="assets/img/Grupo_Criado.png" alt="Passo1" >
                 <hr>
 
@@ -243,7 +219,14 @@
                 de código,possa enviar o projeto devolta com o ficheiro de audio criado. Por fim também é disponível a este um acesso rápido de 
                 comunicação com o aluno ou delegado do grupo (botão "email").
                 </p>
-                <img src="assets/img/Momento-Avaliacao.png" alt="Passo1">
+                <img src="assets/img/MomAvl.png" alt="Passo1">
+                <p>
+                Na secção dúvidas, irão aparecer as dúvidas criadas pelos alunos. Cada dúvida tem no header o número do aluno e a respetiva cadeira, 
+                por exemplo "2022217 - ER". Ao clicar nesse header é expandida a zona da dúvida onde o docente encontra os botões "download", "upload" e 
+                "email". O botão "download" descarrega todos os ficheiros do repositório criado pelo aluno para a dúvida, enquanto que o botão "upload" 
+                permite carregar ficheiros para o mesmo repositório. Por fim, o botão "email" quando clicado abre um novo correio no Outlook onde o campo 
+                destinatário é preenchido automaticamente com o email do aluno em questão.
+                </p>
                 <img src="assets/img/Docente_Ver-duvidas-aluno.png" alt="Passo1">
                 <hr>
 
@@ -267,25 +250,11 @@
                 <img src="assets/gif/upload.gif" alt="Passo1" >
                 <hr>
 
-                <h3>Speech to text</h3>
-                <p>
-                No lado esquerdo,existe um botão que irá guia-lo para a realização do ficheiro de voz facilitando deste modo o comentário ao código. Após clicar em "esclarecer dúvida"
-                é possível selecionar a opção de gravar uma mensagem de vídeo e voz ou apenas voz. De seguida clique em "gravar", após isto deverá de clicar em começar para gravar e em 
-                finalizar para acabar a gravação. Caso seja necessário clique em permitir gravar o áudio e video no seu browser para iniciar 
-                a captura de som/video. Existe um display em que é possivel reproduzir novamente antes de realizar o download dos ficheiros. Poderá gravar novamente outro comentário se necessário, se não, poderá 
-                clicar no 2 ficheiros gerados (um de voz e video ou apenas voz, e outro ficheiro em texto gerado pelo seu ditado). Estes documentos deverão de ser utilizados 
-                para a realização do upload no repositório do aluno já mencionado anteriormente
-                </p>
-                <div class="demo1">
-                    Speech-to-Text - Demonstração 
-                </div>
-                <img src="assets/gif/speech_to_text.gif" alt="Passo1" >
-                <hr>
-
                 <h3>Marcador</h3>
                 <p>
-                O docente também terá que ter a estansão para  encontrar os marcadores introduzidos pelos discentes, assim possibilita encontrar as dúvidas mais facilmente num ficheiro com muitas linhas de código 
-                pois se o docente clicar no marcado na barra de scroll irá diretamente para a secção do código pretendido pelo discente.
+                O docente também terá de utilizar o IDE VSCODE e ter adicionado a extensão para  encontrar os marcadores introduzidos pelos discentes, 
+                assim possibilita encontrar as dúvidas mais facilmente num ficheiro com muitas linhas de código, 
+                pois se o docente clicar no marcado na barra do vertical scroll irá diretamente para a secção do código pretendido pelo discente.
                 </p>
                 <div class="demo1">
                     Marcador - Demonstração 
@@ -299,7 +268,7 @@
 
             <section id="Aluno">
 
-               <h3 class="intro">Todas a funcionalidades do Aluno </h3>
+               <h3 class="intro">Todas a funcionalidades do Discente </h3>
                 <p>
                 O discente tem a funcionalidade de visualizar cadeiras e eventos de avaliação, expor dúvidas e compartilhar ficheiros.
                 </p>
@@ -308,7 +277,7 @@
                 <p>
                 No Menu inicial o discente tem a capacidade visulizar as cadeiras que está inscrito, como podemos observar na imagem.              
                 </p>
-                <img src="assets/img/Aluno_Visualizar_Cadeira.png" alt="Passo1" >
+                <img src="assets/gif/Vis_Cadeiragif.gif" alt="Passo1" >
                 <hr>
                 
                 <h3>Visualizar evento </h3>
@@ -322,106 +291,64 @@
 
                 <h3>Marcador</h3>
                 <p>
-                Ao discente, é possível adicionar um marcador para representar a parte do código em que tem dúvidas, através da extensão "TODO highlight" o discente apenas introduzir dentro do comentário a 
-                seguência de caracteres "<strong>FIXME</strong>", automaticamente cria um marcador visível no código e na barra de scroll à direita.
+                Ao discente é possível adicionar um marcador,  para representar a parte do código em que 
+                tem dúvidas, para obter esta funcionalidade será necessáro utilizar o IDE do VSCODE através da extensão <strong> 
+                TODO highlight </strong> ao discente será necessário introduzir dentro do comentário de código a 
+                seguência de caracteres "<strong>FIXME:</strong>", automaticamente cria um marcador visível no código e na barra do vertical scroll.
                 </p>
                 <div class="demo1">
                 Marcador - Demonstração 
                 </div>
-                <img src="assets/gif/marcador.gif" alt="Passo1" >
+                <img src="assets/gif/Marcador_Docente.gif" alt="Passo1" >
                 <hr>
                 
                 <h3>Como colocar uma dúvida</h3>
                 
                 <h4> <mark> Passo 1</mark></h4>
                 <p>
-                    O discente possui um botão <strong> criar </strong>, permite introduzir o link do repositório e esse repositório irá conter esse ficheiro
-                    com o código, onde se encontra a dúvida. Este link irá ser partilhado com o docente na secção de dúvidas FIXME: 
+                O aluno ao clicar no botão <strong> cadeiras </strong> e escolher a respetiva disciplina poderá visualizar todas as informações disponíveis 
+                nessa cadeira.
                 </p>
                 <img src="assets/img/1.png" alt="Passo1" >
                 <h4> <mark> Passo 2</mark></h4>
-                <img src="assets/gif/Criar-duvida.gif" alt="Passo1" >
-
-                <hr>
-
-
-
-            </section>
-
-            <section id="navigacao">
-                <h3>Como navegar no site</h3>
-                <hr>
+                <p>
+                Para cada cadeira que frequenta, o aluno encontra uma secção "Dúvidas" onde pode criar um repositório para as suas dúvidas, 
+                através do clique na palavra <strong> criar</strong> que permite introduzir o link do repositório, sendo que esse repositório irá 
+                conter o ficheiro  com o código, onde se encontra a dúvida. Este link irá ser partilhado com o docente, este
+                poderá ver na secção de dúvidas.
+                Caso já tenha criado o repositório, o aluno encontrará os botões "download" e "upload", em vez da palavra "criar". Os botões têm a mesma 
+                funcionalidade que no lado do docente.
+                </p>
                 <div class="demo1">
-                    Demo 1
+                    Criar dúvida - Demonstração 
                 </div>
-                <p>Estrutura navegação principal</p>
-                <div>
-                    <img src="assets/img/" alt="Menu">
-                </div>
-                <h3>Estrutura navegação secundária</h3>
+                <img src="assets/gif/discente_cria_duvida.gif" alt="Passo1" >
+
                 <hr>
-                <div class="demo2">
-                    Demo 2
-                </div>
-                <p>Estrutura navegação principal</p>
-                <div>
-                    <img src="assets/img/menu-demo2.png" alt="Menu">
-                </div>
+
+
+
             </section>
-            
-            <section id="navegacao-Telemovel">
-                <h3>Navigação (Mobile)</h3>
-                <hr>
+
+            <section id="stt">
+                 <h3 class= "intro">Speech to text</h3>
+                <p>
+                No lado esquerdo, existe um botão que irá guiá-lo para a realização do ficheiro de aúdio facilitando deste modo o comentário no código. Após clicar em "esclarecer dúvida"
+                é possível selecionar a opção de gravar uma mensagem de vídeo e aúdio ou apenas aúdio (voz). De seguida ao clicar em <strong>gravar</strong>, irá abrir um novo menu 
+                onde deverá clicar em <strong> começar a gravar</strong> e quando a gravação estiver concluída clicar no botão <strong> finalizar </strong> para acabar a gravação. 
+                Caso seja necessário, poderá ter de clicar em permitir gravar o áudio e video no seu browser para iniciar 
+                a captura de som/video. <br>
+                Existe também, um display em que é possivel reproduzir novamente antes de realizar o download dos ficheiros. Poderá gravar novamente outro comentário se necessário, se não, poderá 
+                clicar nos 2 ficheiros gerados (um de voz e video ou apenas voz, e outro ficheiro em texto gerado pelo seu ditado). Estes documentos deverão de ser utilizados 
+                para a realização do upload no repositório do aluno já mencionado anteriormente.
+                </p>
                 <div class="demo1">
-                    Demo 1
+                    Speech-to-Text - Demonstração 
                 </div>
-                <p>Estrutura navegação principal</p>
-                <div>
-                    <img src="assets/img/" alt="Menu">
-                </div>
-                <h3>Navigação (Mobile)</h3>
+                <img src="assets/gif/speech_to_text.gif" alt="Passo1" >
                 <hr>
-                <div class="demo2">
-                    Demo 2
-                </div>
-                <p>Estrutura navegação secundária</p>
-                <div>
-                    <img src="assets/img/" alt="Menu">
-                </div>
             </section>
 
-            <section id="informacao">
-                <h3> Informações </h3>
-                <hr>
-                <p>Todas as informações disponiveis aqui.</p>
-                <div>
-                    <img src="assets/img/" alt="Menu">
-                </div>
-                <p>Todas as informações disponiveis aqui.</p>
-                <div>
-                    <img src="assets/img/" alt="Menu">
-                </div>
-                <p>Todas as informações disponiveis aqui.</p>
-                <div>
-                    <img src="assets/img/" alt="Menu">
-                </div>
-            </section>
-
-             <section id="contatos">
-                <h3>Formulário de contato <mark>Seguir os seguintes passos</mark></h3>
-                <hr>
-                <div>
-                    <img src="assets/img/" alt="Contatos">
-                </div>
-            </section>
-
-            <section id="Homepage">
-                <h3>Layout do Site</h3>
-                <hr>
-                <div>
-                    <img src="assets/img/" alt="">
-                </div>
-            </section>    
         </article> <!-- /.Fim-Conteudo-->
     </main> <!-- /.Container -->
 

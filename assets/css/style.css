@@ -277,7 +277,8 @@ ul.tick-ul li:before {
     display: inline-block;
     padding-bottom: 10px;
     padding-top: 20px;
-    font-size: 25px;
+    margin-left: 38%;
+    font-size: 18px;
     text-transform: uppercase;
     border-bottom: 1px inset red;
 }

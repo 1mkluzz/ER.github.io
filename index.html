@@ -26,8 +26,9 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Serviços</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Acerca</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Sobre</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Equipa</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Suporte</a></li>
                         <li class="nav-item"><input type="image" src="assets/img/logout.png" onclick="logout()" width="30" height="30"/></li>
                     </ul>
                 </div>
@@ -90,9 +91,8 @@
                         </div>
                       </div>
                     <div class="btn-group">
-                    <button class="btn btn-secondary btn-rounded btn-xl bg-success" onclick = "window.location.href = '/documentacao.html'"  type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" >
-                        Como utilizar o Sistema CodeMent
-                    </button>
+                    <a class="btn btn-secondary btn-rounded btn-xl bg-success" href= "documentacao.html" role="button"  >
+                        Como utilizar o Sistema CodeMent</a>
 
                 </div>
             </div>
@@ -107,7 +107,7 @@
         <section class="page-section bg-white" id="about">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase" style="color: rgb(0, 0, 0);">Acerca</h2>
+                    <h2 class="section-heading text-uppercase" style="color: rgb(0, 0, 0);">Sobre</h2>
                     <h3 class="section-subheading " style="color: rgb(0, 0, 0);">Este sistema surgiu com a necessidade de 
                         uma plataforma de apoio ao ensino à distância, nos tempos de pandemia. <br><br>
                         Com esta plataforma, tirar dúvidas de programação com os professores tornou-se mais fácil!
@@ -203,6 +203,43 @@
                         </div>
                      </div>
                      
+        </section>
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Suporte</h2>
+                    <h3 class="section-subheading text-muted">Entre em contato connosco, respondemos a qualquer dúvida.</h3>
+                </div>
+                <form id="contactForm" name="sentMessage" novalidate="novalidate">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input class="form-control" id="name" type="text" placeholder="Nome *" required="required" data-validation-required-message="Introduza o seu nome." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" id="email" type="email" placeholder="Email *" required="required" data-validation-required-message="Introduza o seu email." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <input class="form-control" id="phone" type="tel" placeholder="Telemóvel *" required="required" data-validation-required-message="Introduza o seu Contato." />
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <textarea class="form-control" id="message" placeholder="Mensagem *" required="required" data-validation-required-message="Mensagem."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div id="success"></div>
+                        <button class="btn btn-dark btn-xl text-uppercase" id="sendMessageButton" type="submit">Enviar mensagem</button>
+                    </div>
+                </form>
+            </div  >
+
         </section>
          
         <!-- Footer-->
