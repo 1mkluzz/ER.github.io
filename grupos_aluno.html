@@ -337,7 +337,10 @@
                   var datalimite = data[i]["data"];
                   var message = data[i]["message"];
                   
-                  text_er += "<h3 class='mb-0'>" + nome + "</h3><br><div class='subheading mb-3'>Data Limite: "+ datalimite + "</div>" +  message + "<br><br><a class='btn btn-primary' href='#' role='button'>Download </a>&nbsp<a class='btn btn-primary' href='#' role='button' >Upload</a> <a class='btn btn-primary' href='#' role='button'>Email</a><div class='flex-shrink-0'><span class='text-primary'>publicado em: dia/mês/ano</span></div><br><br><br>";
+                  var dados_grupos = JSON.parse(localStorage.grupos);
+                  var url = dados_grupos[0]["url"];
+
+                  text_er += "<h3 class='mb-0'>" + nome + "</h3><br><div class='subheading mb-3'>Data Limite: "+ datalimite + "</div>" +  message + "<br><br><a class='btn btn-primary' href='" + url + "/archive/master.zip' role='button'>Download </a>&nbsp<a class='btn btn-primary' href='" + url + "/upload/master' role='button' >Upload</a> <a class='btn btn-primary' href='#' role='button'>Email</a><div class='flex-shrink-0'><span class='text-primary'>publicado em: dia/mês/ano</span></div><br><br><br>";
                   
               }
 
